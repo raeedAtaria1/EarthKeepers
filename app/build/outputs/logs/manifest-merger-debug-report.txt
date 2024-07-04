@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-82:12
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-82:12
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-82:12
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-82:12
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-84:12
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-84:12
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-84:12
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-84:12
 MERGED from [androidx.databinding:viewbinding:8.4.1] C:\Users\Hp\.gradle\caches\transforms-4\ab3f755358cdf287d5c24e8488704ccb\transformed\viewbinding-8.4.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.5.3] C:\Users\Hp\.gradle\caches\transforms-4\6c301ddfca362f485817071fc4285f51\transformed\navigation-fragment-ktx-2.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\Hp\.gradle\caches\transforms-4\358a8cb75ca885ab384d82cb69167bcb\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:17:1-24:12
@@ -195,13 +195,17 @@ MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Hp\.gradle\caches\transforms-
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Hp\.gradle\caches\transforms-4\19508edeac0af9c755cd31c12835202a\transformed\grpc-android-1.57.2\AndroidManifest.xml:7:5-79
 	android:name
 		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:35:22-76
-uses-permission#android.permission.CAMERA
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:39:5-65
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:37:5-76
 	android:name
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:39:22-62
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:37:22-73
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:40:5-65
+	android:name
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:40:22-62
 application
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:41:5-80:19
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:41:5-80:19
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:5-82:19
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:5-82:19
 MERGED from [com.google.android.material:material:1.13.0-alpha03] C:\Users\Hp\.gradle\caches\transforms-4\f9a43a9f20cdf05a4d168907d58defc8\transformed\material-1.13.0-alpha03\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0-alpha03] C:\Users\Hp\.gradle\caches\transforms-4\f9a43a9f20cdf05a4d168907d58defc8\transformed\material-1.13.0-alpha03\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Hp\.gradle\caches\transforms-4\7f6c457c5546f423318dda7ab1a27e8c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -283,73 +287,73 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Hp\.gradle\caches\transforms-4\fd797c31bb8873545b228b144a11467c\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:46:9-35
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:47:9-35
 	android:label
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:44:9-41
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:45:9-41
 	tools:ignore
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:49:9-35
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:50:9-35
 	android:roundIcon
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:45:9-54
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:46:9-54
 	android:icon
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:43:9-43
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:44:9-43
 	android:allowBackup
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:9-35
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:43:9-35
 	android:theme
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:48:9-55
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:49:9-55
 	android:taskAffinity
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:47:9-32
-activity#com.google.mediapipe.examples.gesturerecognizer.LoginActivity
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:51:9-66:20
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:48:9-32
+activity#com.google.mediapipe.examples.gesturerecognizer.capture_photo
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:52:9-67:20
 	android:exported
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:53:13-36
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:54:13-36
 	android:name
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:52:13-42
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:53:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:54:13-59:29
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:55:13-60:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:55:17-69
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:56:17-69
 	android:name
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:55:25-66
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:56:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:58:17-77
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:59:17-77
 	android:name
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:58:27-74
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:59:27-74
 meta-data#android.notch_support
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:63:13-65:40
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:64:13-66:40
 	android:value
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:65:17-37
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:66:17-37
 	android:name
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:64:17-53
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:65:17-53
 activity#com.google.mediapipe.examples.gesturerecognizer.MainActivity
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:67:9-73
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:68:9-73
 	android:exported
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:67:48-71
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:68:48-71
 	android:name
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:67:19-47
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:68:19-47
 activity#com.google.mediapipe.examples.gesturerecognizer.SignUpActivity
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:68:9-75
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:69:9-75
 	android:exported
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:68:50-73
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:69:50-73
 	android:name
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:68:19-49
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:69:19-49
 activity#com.google.mediapipe.examples.gesturerecognizer.scoreActivity
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:69:9-74
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:70:9-74
 	android:exported
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:69:49-72
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:70:49-72
 	android:name
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:69:19-48
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:70:19-48
 activity#com.google.mediapipe.examples.gesturerecognizer.HomeActivity
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:70:9-73
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:71:9-73
 	android:exported
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:70:48-71
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:71:48-71
 	android:name
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:70:19-47
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:71:19-47
 activity#com.google.mediapipe.examples.gesturerecognizer.ProfileActivity
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:71:9-76
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:72:9-76
 	android:exported
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:71:51-74
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:72:51-74
 	android:name
-		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:71:19-50
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:72:19-50
 uses-sdk
 INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml

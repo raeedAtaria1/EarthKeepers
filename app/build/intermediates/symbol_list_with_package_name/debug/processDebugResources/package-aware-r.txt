@@ -3384,6 +3384,7 @@ id checked
 id chronometer
 id circle_center
 id clear_text
+id clickme
 id clip_horizontal
 id clip_vertical
 id clockwise
@@ -3974,6 +3975,7 @@ layout activity_score
 layout activity_signup
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
+layout capture_photo
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

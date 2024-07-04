@@ -54,6 +54,7 @@ id buttonSave
 id buttonSignUp
 id camera_container
 id camera_fragment
+id clickme
 id detection_threshold_minus
 id detection_threshold_plus
 id detection_threshold_value
@@ -124,6 +125,7 @@ layout activity_main
 layout activity_profile
 layout activity_score
 layout activity_signup
+layout capture_photo
 layout fragment_camera
 layout fragment_gallery
 layout info_bottom_sheet

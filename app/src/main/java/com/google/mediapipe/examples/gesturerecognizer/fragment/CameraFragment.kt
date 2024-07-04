@@ -1,11 +1,23 @@
 package com.google.mediapipe.examples.gesturerecognizer.fragment
-import android.content.Context
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.Configuration
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.PixelFormat
+import android.hardware.display.DisplayManager
+import android.media.ImageReader
 import android.media.MediaPlayer
+import android.media.MediaScannerConnection
+import android.media.projection.MediaProjection
+import android.media.projection.MediaProjectionManager
 import android.os.Bundle
-import android.speech.tts.TextToSpeech
+import android.os.Environment
+import android.os.Handler
+import android.os.Looper
+import android.text.format.DateFormat
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -30,10 +42,28 @@ import com.google.mediapipe.examples.gesturerecognizer.R
 import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
 import com.google.mediapipe.examples.gesturerecognizer.util.TextToSpeechHelper
 import com.google.mediapipe.tasks.vision.core.RunningMode
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 import java.util.Locale
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
+import java.util.Date
+import java.text.SimpleDateFormat
+import androidx.core.content.FileProvider
+import android.content.Intent
+import android.content.ContentValues
+import android.provider.MediaStore
+import android.graphics.BitmapFactory
+import android.widget.Button
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.mediapipe.examples.gesturerecognizer.capture_photo
+import java.io.FileInputStream
+import android.content.pm.PackageManager
+
+import java.util.*
 
 class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerListener {
     private lateinit var mediaPlayer: MediaPlayer
@@ -45,17 +75,27 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
     private lateinit var backgroundMusicPlayer: MediaPlayer
     private lateinit var textToSpeechHelper: TextToSpeechHelper
 
+    private lateinit var capturePhotoInstance: capture_photo
+    private val permissionStorage = arrayOf(
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_EXTERNAL_STORAGE
+    )
 
     companion object {
         private const val TAG = "Hand gesture recognizer"
+        private const val REQUEST_EXTERNAL_STORAGE = 1
+
     }
 
     private var _fragmentCameraBinding: FragmentCameraBinding? = null
     private val fragmentCameraBinding get() = _fragmentCameraBinding!!
+    private var mediaProjectionManager: MediaProjectionManager? = null
+    private var mediaProjection: MediaProjection? = null
 
     private lateinit var gestureRecognizerHelper: GestureRecognizerHelper
     private val viewModel: MainViewModel by activityViewModels()
     private var defaultNumResults = 1
+
     private fun determine_hand_prefrence(){
         val sharedPref = activity?.getSharedPreferences("userData", Context.MODE_PRIVATE)
         val handPreference = sharedPref?.getString("handPreference", null)
@@ -81,6 +121,14 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
 
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Initialize an instance of capture_photo
+        capturePhotoInstance = capture_photo()
+        // Call takeScreenshotAndSave() whenever needed
+    }
     override fun onResume() {
         super.onResume()
         if (!PermissionsFragment.hasPermissions(requireContext())) {
@@ -296,6 +344,20 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
         super.onConfigurationChanged(newConfig)
         imageAnalyzer?.targetRotation = fragmentCameraBinding.viewFinder.display.rotation
     }
+    private fun captureScreenshot(): Bitmap? {
+        val view = fragmentCameraBinding.viewFinder
+        // Ensure the view has been laid out before capturing the screenshot
+        if (!view.isLaidOut) {
+            Log.e(TAG, "View is not laid out yet")
+            return null
+        }
+        val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        view.draw(canvas)
+        return bitmap
+    }
+
+
 
     // Update UI after a hand gesture has been recognized. Extracts original
 // image height/width to scale and place the landmarks properly through
@@ -336,6 +398,17 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
 //                                mediaPlayer.start()
 //                                waitDelay++
                                 textToSpeechHelper.speak("five points")
+                                if (PermissionsFragment.hasPermissions(requireContext())) {
+                                    // Capture and save screenshot
+                                    //capturePhotoInstance.takeScreenshotAndSave()
+                                } else {
+                                    // Request permissions if not granted
+                                    requestPermissions(permissionStorage, REQUEST_EXTERNAL_STORAGE)
+                                }
+                                //add taking an screen shoot
+                                //val screenshot = takeScreenshot()
+                                // Save screenshot to gallery
+
                             }
 
 

@@ -34,6 +34,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <!-- Declare permissions -->
     <uses-permission android:name="android.permission.CAMERA" />
@@ -69,6 +70,7 @@
         <activity android:name=".scoreActivity" android:exported="true"/>
         <activity android:name=".HomeActivity" android:exported="true"/>
         <activity android:name=".ProfileActivity" android:exported="true"/>
+
 
 
 

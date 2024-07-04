@@ -40,12 +40,12 @@
         "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\raw\\background_music.mp3"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-62:/layout_activity_home.xml.flat",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_home.xml"
-    },
-    {
         "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\drawable_profile_icon.png.flat",
         "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\drawable\\profile_icon.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-62:/layout_capture_photo.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/capture_photo.xml"
     },
     {
         "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\drawable_rounded_button.xml.flat",
@@ -96,12 +96,12 @@
         "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\menu_menu_bottom_nav.xml.flat",
-        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\menu\\menu_bottom_nav.xml"
-    },
-    {
         "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\layout_activity_home.xml.flat",
         "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\menu_menu_bottom_nav.xml.flat",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\menu\\menu_bottom_nav.xml"
     },
     {
         "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\color_bg_nav_item.xml.flat",

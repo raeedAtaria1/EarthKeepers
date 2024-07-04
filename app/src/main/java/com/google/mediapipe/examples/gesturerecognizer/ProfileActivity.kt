@@ -82,7 +82,7 @@ class ProfileActivity : AppCompatActivity() {
         // Display user data
         editTextFirstName.setText(firstName)
         editTextLastName.setText(lastName)
-        if (handPreference == "Left") {
+        if (handPreference == "Left-Handed") {
             radioButtonLeft.isChecked = true
         } else {
             radioButtonRight.isChecked = true
@@ -105,7 +105,7 @@ class ProfileActivity : AppCompatActivity() {
         // Get user input
         val newFirstName = editTextFirstName.text.toString()
         val newLastName = editTextLastName.text.toString()
-        val newHandPreference = if (radioButtonLeft.isChecked) "Left" else "Right"
+        val newHandPreference = if (radioButtonLeft.isChecked) "Left-Handed" else "Right-Handed"
 
         // Update local SharedPreferences
         val editor = sharedPreferences.edit()
