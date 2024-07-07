@@ -1,5 +1,5 @@
 package com.google.mediapipe.examples.gesturerecognizer.fragment
-
+import android.content.SharedPreferences
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
@@ -59,7 +59,6 @@ import android.graphics.BitmapFactory
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.mediapipe.examples.gesturerecognizer.capture_photo
 import java.io.FileInputStream
 import android.content.pm.PackageManager
 
@@ -75,7 +74,6 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
     private lateinit var backgroundMusicPlayer: MediaPlayer
     private lateinit var textToSpeechHelper: TextToSpeechHelper
 
-    private lateinit var capturePhotoInstance: capture_photo
     private val permissionStorage = arrayOf(
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.READ_EXTERNAL_STORAGE
@@ -84,6 +82,8 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
     companion object {
         private const val TAG = "Hand gesture recognizer"
         private const val REQUEST_EXTERNAL_STORAGE = 1
+        var objectWasgrabbed: Boolean = false
+
 
     }
 
@@ -126,7 +126,6 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Initialize an instance of capture_photo
-        capturePhotoInstance = capture_photo()
         // Call takeScreenshotAndSave() whenever needed
     }
     override fun onResume() {
@@ -368,53 +367,58 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
     ) {
         determine_hand_prefrence()
         activity?.runOnUiThread {
-            waitDelay=0
-            if(waitDelay==5 ){
-                waitDelay=0
-            }
-            if(waitDelay!=0 )
-                waitDelay++
+
+
             if (_fragmentCameraBinding != null) {
+                if(waitDelay>0){
+                    waitDelay++
+                    if(waitDelay==7){
+                            textToSpeechHelper.speak("five points")
+                            objectWasgrabbed=true
+                            waitDelay=0}
+
+
+                }
                 // Show result of recognized gesture
                 val gestureCategories = resultBundle.results.first().gestures()
                 if (gestureCategories.isNotEmpty()) {
                     var flag=0
 
-                    for(i in 0 until gestureCategories.size){
-                        if(resultBundle.results.first().handedness().get(i).get(0).displayName()==prefferedHand) {
-                            if(!backgroundMusicPlayer.isPlaying()){
-                                backgroundMusicPlayer.start()
-                            }
-                            flag=1
-                            var temp=currentHand
-                            currentHand=resultBundle.results.first().gestures().get(i).get(0).categoryName()
-                            if(prevHand!=currentHand)
-                                prevHand=temp
-                            gestureRecognizerResultAdapter.updateResults(
-                                gestureCategories.get(i)
-                            )
-                            if(currentHand=="closed_palm" && prevHand=="open_palm" && waitDelay==0)
-                            {
-//                                mediaPlayer.start()
-//                                waitDelay++
-                                textToSpeechHelper.speak("five points")
-                                if (PermissionsFragment.hasPermissions(requireContext())) {
-                                    // Capture and save screenshot
-                                    //capturePhotoInstance.takeScreenshotAndSave()
-                                } else {
-                                    // Request permissions if not granted
-                                    requestPermissions(permissionStorage, REQUEST_EXTERNAL_STORAGE)
+                    if(waitDelay==0)
+                        for(i in 0 until gestureCategories.size){
+                            if(resultBundle.results.first().handedness().get(i).get(0).displayName()==prefferedHand) {
+                                if(!backgroundMusicPlayer.isPlaying()){
+                                    backgroundMusicPlayer.start()
                                 }
-                                //add taking an screen shoot
-                                //val screenshot = takeScreenshot()
-                                // Save screenshot to gallery
+                                flag=1
+                                var temp=currentHand
+                                currentHand=resultBundle.results.first().gestures().get(i).get(0).categoryName()
+                                if(prevHand!=currentHand)
+                                    prevHand=temp
+                                gestureRecognizerResultAdapter.updateResults(
+                                    gestureCategories.get(i)
+                                )
 
+
+                                if(currentHand=="closed_palm" && prevHand=="open_palm" && waitDelay==0)
+                                {
+    //                                mediaPlayer.start()
+    //                                waitDelay++
+                                    waitDelay=1
+//                                    textToSpeechHelper.speak("five points")
+//                                    objectWasgrabbed=true
+
+
+                                    //add taking an screen shoot
+                                    //val screenshot = takeScreenshot()
+                                    // Save screenshot to gallery
+
+                                }
+
+
+                                break
                             }
-
-
-                            break
                         }
-                    }
                     if(flag==0){
                         gestureRecognizerResultAdapter.updateResults(emptyList())
                         backgroundMusicPlayer.pause()

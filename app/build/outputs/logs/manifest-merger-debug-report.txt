@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-84:12
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-84:12
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-84:12
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-84:12
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-77:12
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-77:12
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-77:12
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-77:12
 MERGED from [androidx.databinding:viewbinding:8.4.1] C:\Users\Hp\.gradle\caches\transforms-4\ab3f755358cdf287d5c24e8488704ccb\transformed\viewbinding-8.4.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.5.3] C:\Users\Hp\.gradle\caches\transforms-4\6c301ddfca362f485817071fc4285f51\transformed\navigation-fragment-ktx-2.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\Hp\.gradle\caches\transforms-4\358a8cb75ca885ab384d82cb69167bcb\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:17:1-24:12
@@ -199,13 +199,17 @@ uses-permission#android.permission.READ_MEDIA_IMAGES
 ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:37:5-76
 	android:name
 		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:37:22-73
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:39:5-77
+	android:name
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:39:22-74
 uses-permission#android.permission.CAMERA
 ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:40:5-65
 	android:name
 		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:40:22-62
 application
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:5-82:19
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:5-82:19
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:5-75:19
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:5-75:19
 MERGED from [com.google.android.material:material:1.13.0-alpha03] C:\Users\Hp\.gradle\caches\transforms-4\f9a43a9f20cdf05a4d168907d58defc8\transformed\material-1.13.0-alpha03\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0-alpha03] C:\Users\Hp\.gradle\caches\transforms-4\f9a43a9f20cdf05a4d168907d58defc8\transformed\material-1.13.0-alpha03\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Hp\.gradle\caches\transforms-4\7f6c457c5546f423318dda7ab1a27e8c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -302,7 +306,7 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\
 		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:49:9-55
 	android:taskAffinity
 		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:48:9-32
-activity#com.google.mediapipe.examples.gesturerecognizer.capture_photo
+activity#com.google.mediapipe.examples.gesturerecognizer.LoginActivity
 ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:52:9-67:20
 	android:exported
 		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:54:13-36

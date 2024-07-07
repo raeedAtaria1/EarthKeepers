@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package com.google.mediapipe.examples.gesturerecognizer
+import android.content.SharedPreferences
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -31,7 +32,12 @@ import com.google.mediapipe.tasks.core.Delegate
 import com.google.mediapipe.tasks.vision.core.RunningMode
 import com.google.mediapipe.tasks.vision.gesturerecognizer.GestureRecognizer
 import com.google.mediapipe.tasks.vision.gesturerecognizer.GestureRecognizerResult
-
+import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
+import android.os.Environment
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.util.Date
 class GestureRecognizerHelper(
     var minHandDetectionConfidence: Float = DEFAULT_HAND_DETECTION_CONFIDENCE,
     var minHandTrackingConfidence: Float = DEFAULT_HAND_TRACKING_CONFIDENCE,
@@ -149,13 +155,36 @@ class GestureRecognizerHelper(
             matrix,
             true
         )
+        // Save the rotated bitmap to a file
+        if(CameraFragment.objectWasgrabbed==true){
+            saveBitmap(rotatedBitmap, context, "recognized_frame_.jpg")
+            CameraFragment.objectWasgrabbed=false
+        }
 
         // Convert the input Bitmap object to an MPImage object to run inference
         val mpImage = BitmapImageBuilder(rotatedBitmap).build()
 
         recognizeAsync(mpImage, frameTime)
     }
+    fun saveBitmap(bitmap: Bitmap, context: Context, fileName: String) {
+        val date = Date()
 
+        val dirPath = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES).toString()
+        val file = File(dirPath)
+        if (!file.exists()) {
+            file.mkdir()
+        }
+        val path = "$dirPath/$fileName.jpeg"
+
+        try {
+            val imageUrl = File(path)
+            FileOutputStream(imageUrl).use { out ->
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out)
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
     // Run hand gesture recognition using MediaPipe Gesture Recognition API
     @VisibleForTesting
     fun recognizeAsync(mpImage: MPImage, frameTime: Long) {
