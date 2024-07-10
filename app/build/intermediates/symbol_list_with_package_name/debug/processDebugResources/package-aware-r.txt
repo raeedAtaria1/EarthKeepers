@@ -1429,8 +1429,10 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color bg_nav_item
+color black
 color bottom_sheet_background
 color bottom_sheet_text_color
+color bounding_box_color
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -2198,6 +2200,7 @@ color switch_thumb_normal_material_light
 color toolbar_background
 color tooltip_background_dark
 color tooltip_background_light
+color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material

@@ -109,8 +109,13 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Hp\.gradle\cache
 MERGED from [androidx.print:print:1.0.0] C:\Users\Hp\.gradle\caches\transforms-4\80a72e676cf2016707d672c712753997\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Hp\.gradle\caches\transforms-4\e0e0a3aa581848cd7b8a17947c20b354\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Hp\.gradle\caches\transforms-4\4cee0cf139ca9a70719205f0d39c47cd\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [org.tensorflow:tensorflow-lite-support:0.4.4] C:\Users\Hp\.gradle\caches\transforms-4\9f6ee5d8082786d3d61f9c86f6b11a53\transformed\tensorflow-lite-support-0.4.4\AndroidManifest.xml:2:1-5:12
+MERGED from [org.tensorflow:tensorflow-lite:2.14.0] C:\Users\Hp\.gradle\caches\transforms-4\f4a5a03c30d980547e1c9ceaef831836\transformed\tensorflow-lite-2.14.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Hp\.gradle\caches\transforms-4\19508edeac0af9c755cd31c12835202a\transformed\grpc-android-1.57.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Hp\.gradle\caches\transforms-4\41ac33b9591edae396921e32062e4b39\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
+MERGED from [org.tensorflow:tensorflow-lite-support-api:0.4.4] C:\Users\Hp\.gradle\caches\transforms-4\f3f5c3ad34549c4077a90813933daccc\transformed\tensorflow-lite-support-api-0.4.4\AndroidManifest.xml:2:1-5:12
+MERGED from [org.tensorflow:tensorflow-lite-api:2.14.0] C:\Users\Hp\.gradle\caches\transforms-4\5b2c9577dd4d9ab808b2cb71d20cf3d0\transformed\tensorflow-lite-api-2.14.0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\Hp\.gradle\caches\transforms-4\677c84e4b7ecedd935fb558a3ab339a3\transformed\image-1.0.0-beta1\AndroidManifest.xml:2:1-9:12
 	package
 		INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -286,6 +291,12 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Us
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.0] C:\Users\Hp\.gradle\caches\transforms-4\96f4d9dc74a168d1460f1f132d0c72e7\transformed\transport-backend-cct-3.1.0\AndroidManifest.xml:28:5-36:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Hp\.gradle\caches\transforms-4\0f4d610e871b288b0a572a7df8332d57\transformed\transport-runtime-3.1.0\AndroidManifest.xml:25:5-39:19
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.0] C:\Users\Hp\.gradle\caches\transforms-4\0f4d610e871b288b0a572a7df8332d57\transformed\transport-runtime-3.1.0\AndroidManifest.xml:25:5-39:19
+MERGED from [org.tensorflow:tensorflow-lite:2.14.0] C:\Users\Hp\.gradle\caches\transforms-4\f4a5a03c30d980547e1c9ceaef831836\transformed\tensorflow-lite-2.14.0\AndroidManifest.xml:9:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.14.0] C:\Users\Hp\.gradle\caches\transforms-4\f4a5a03c30d980547e1c9ceaef831836\transformed\tensorflow-lite-2.14.0\AndroidManifest.xml:9:5-20
+MERGED from [org.tensorflow:tensorflow-lite-api:2.14.0] C:\Users\Hp\.gradle\caches\transforms-4\5b2c9577dd4d9ab808b2cb71d20cf3d0\transformed\tensorflow-lite-api-2.14.0\AndroidManifest.xml:9:5-20
+MERGED from [org.tensorflow:tensorflow-lite-api:2.14.0] C:\Users\Hp\.gradle\caches\transforms-4\5b2c9577dd4d9ab808b2cb71d20cf3d0\transformed\tensorflow-lite-api-2.14.0\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\Hp\.gradle\caches\transforms-4\677c84e4b7ecedd935fb558a3ab339a3\transformed\image-1.0.0-beta1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\Hp\.gradle\caches\transforms-4\677c84e4b7ecedd935fb558a3ab339a3\transformed\image-1.0.0-beta1\AndroidManifest.xml:7:5-20
 	android:extractNativeLibs
 		INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
@@ -572,10 +583,20 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Hp\.gradle\caches\t
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Hp\.gradle\caches\transforms-4\e0e0a3aa581848cd7b8a17947c20b354\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Hp\.gradle\caches\transforms-4\4cee0cf139ca9a70719205f0d39c47cd\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Hp\.gradle\caches\transforms-4\4cee0cf139ca9a70719205f0d39c47cd\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [org.tensorflow:tensorflow-lite-support:0.4.4] C:\Users\Hp\.gradle\caches\transforms-4\9f6ee5d8082786d3d61f9c86f6b11a53\transformed\tensorflow-lite-support-0.4.4\AndroidManifest.xml:4:3-71
+MERGED from [org.tensorflow:tensorflow-lite-support:0.4.4] C:\Users\Hp\.gradle\caches\transforms-4\9f6ee5d8082786d3d61f9c86f6b11a53\transformed\tensorflow-lite-support-0.4.4\AndroidManifest.xml:4:3-71
+MERGED from [org.tensorflow:tensorflow-lite:2.14.0] C:\Users\Hp\.gradle\caches\transforms-4\f4a5a03c30d980547e1c9ceaef831836\transformed\tensorflow-lite-2.14.0\AndroidManifest.xml:6:5-7:38
+MERGED from [org.tensorflow:tensorflow-lite:2.14.0] C:\Users\Hp\.gradle\caches\transforms-4\f4a5a03c30d980547e1c9ceaef831836\transformed\tensorflow-lite-2.14.0\AndroidManifest.xml:6:5-7:38
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Hp\.gradle\caches\transforms-4\19508edeac0af9c755cd31c12835202a\transformed\grpc-android-1.57.2\AndroidManifest.xml:5:5-44
 MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Hp\.gradle\caches\transforms-4\19508edeac0af9c755cd31c12835202a\transformed\grpc-android-1.57.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Hp\.gradle\caches\transforms-4\41ac33b9591edae396921e32062e4b39\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Hp\.gradle\caches\transforms-4\41ac33b9591edae396921e32062e4b39\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [org.tensorflow:tensorflow-lite-support-api:0.4.4] C:\Users\Hp\.gradle\caches\transforms-4\f3f5c3ad34549c4077a90813933daccc\transformed\tensorflow-lite-support-api-0.4.4\AndroidManifest.xml:4:3-71
+MERGED from [org.tensorflow:tensorflow-lite-support-api:0.4.4] C:\Users\Hp\.gradle\caches\transforms-4\f3f5c3ad34549c4077a90813933daccc\transformed\tensorflow-lite-support-api-0.4.4\AndroidManifest.xml:4:3-71
+MERGED from [org.tensorflow:tensorflow-lite-api:2.14.0] C:\Users\Hp\.gradle\caches\transforms-4\5b2c9577dd4d9ab808b2cb71d20cf3d0\transformed\tensorflow-lite-api-2.14.0\AndroidManifest.xml:6:5-7:38
+MERGED from [org.tensorflow:tensorflow-lite-api:2.14.0] C:\Users\Hp\.gradle\caches\transforms-4\5b2c9577dd4d9ab808b2cb71d20cf3d0\transformed\tensorflow-lite-api-2.14.0\AndroidManifest.xml:6:5-7:38
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\Hp\.gradle\caches\transforms-4\677c84e4b7ecedd935fb558a3ab339a3\transformed\image-1.0.0-beta1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\Hp\.gradle\caches\transforms-4\677c84e4b7ecedd935fb558a3ab339a3\transformed\image-1.0.0-beta1\AndroidManifest.xml:5:5-44
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:23.0.0] C:\Users\Hp\.gradle\caches\transforms-4\955f9da1fea8919a438619cb0bfa13b1\transformed\firebase-auth-23.0.0\AndroidManifest.xml:23:9-148
 	android:targetSdkVersion

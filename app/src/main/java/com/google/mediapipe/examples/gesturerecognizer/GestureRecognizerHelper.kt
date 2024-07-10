@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 package com.google.mediapipe.examples.gesturerecognizer
-import android.content.SharedPreferences
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -38,6 +37,9 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.util.Date
+import com.google.mediapipe.examples.gesturerecognizer.Constants.LABELS_PATH
+import com.google.mediapipe.examples.gesturerecognizer.Constants.MODEL_PATH
+
 class GestureRecognizerHelper(
     var minHandDetectionConfidence: Float = DEFAULT_HAND_DETECTION_CONFIDENCE,
     var minHandTrackingConfidence: Float = DEFAULT_HAND_TRACKING_CONFIDENCE,
@@ -46,11 +48,13 @@ class GestureRecognizerHelper(
     var runningMode: RunningMode = RunningMode.IMAGE,
     val context: Context,
     val gestureRecognizerListener: GestureRecognizerListener? = null
+
 ) {
 
     // For this example this needs to be a var so it can be reset on changes. If the GestureRecognizer
     // will not change, a lazy val would be preferable.
     private var gestureRecognizer: GestureRecognizer? = null
+    private lateinit var objectDetector: ObjectDetector
 
     init {
         setupGestureRecognizer()
@@ -159,6 +163,28 @@ class GestureRecognizerHelper(
         if(CameraFragment.objectWasgrabbed==true){
             saveBitmap(rotatedBitmap, context, "recognized_frame_.jpg")
             CameraFragment.objectWasgrabbed=false
+            objectDetector = ObjectDetector(context, MODEL_PATH, LABELS_PATH, object : ObjectDetector.DetectorListener {
+                override fun onEmptyDetect() {
+                    Log.d(YOLO123, "Detected object nothing")
+                }
+
+
+
+
+
+                override fun onDetect(boundingBoxes: List<BoundingBox>, inferenceTime: Long) {
+
+
+                        // Log the detection results
+                        for (box in boundingBoxes) {
+                            Log.d(YOLO123, "Detected object: ${box.clsName} with confidence: ${box.cnf}")
+                        }
+
+                        }
+
+
+            })
+            objectDetector.runDetection(rotatedBitmap)
         }
 
         // Convert the input Bitmap object to an MPImage object to run inference
@@ -353,6 +379,7 @@ class GestureRecognizerHelper(
 
     companion object {
         val TAG = "GestureRecognizerHelper ${this.hashCode()}"
+        val YOLO123="yolo"
         private const val MP_RECOGNIZER_TASK = "rock_paper_scissors (1).task"
 
         const val DELEGATE_CPU = 0

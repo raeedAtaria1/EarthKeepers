@@ -382,14 +382,15 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
                 // Show result of recognized gesture
                 val gestureCategories = resultBundle.results.first().gestures()
                 if (gestureCategories.isNotEmpty()) {
+                    if(!backgroundMusicPlayer.isPlaying()){
+                        backgroundMusicPlayer.start()
+                    }
                     var flag=0
 
                     if(waitDelay==0)
                         for(i in 0 until gestureCategories.size){
                             if(resultBundle.results.first().handedness().get(i).get(0).displayName()==prefferedHand) {
-                                if(!backgroundMusicPlayer.isPlaying()){
-                                    backgroundMusicPlayer.start()
-                                }
+
                                 flag=1
                                 var temp=currentHand
                                 currentHand=resultBundle.results.first().gestures().get(i).get(0).categoryName()

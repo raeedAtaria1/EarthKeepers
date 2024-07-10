@@ -2,8 +2,10 @@ R_DEF: Internal format may change without notice
 local
 array delegate_spinner_titles
 color bg_nav_item
+color black
 color bottom_sheet_background
 color bottom_sheet_text_color
+color bounding_box_color
 color green_primary
 color icActive
 color icFocused
@@ -16,6 +18,7 @@ color mp_color_primary_variant
 color mp_color_secondary
 color mp_color_secondary_variant
 color toolbar_background
+color white
 dimen bottom_sheet_control_btn_size
 dimen bottom_sheet_control_text_side_margin
 dimen bottom_sheet_default_row_margin
