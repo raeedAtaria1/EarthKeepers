@@ -4,11 +4,14 @@
         <item>CPU</item>
         <item>GPU</item>
     </string-array>
+    <color name="background_color">#F5F5F5</color>
     <color name="black">#FF000000</color>
     <color name="bottom_sheet_background">#EEEEEE</color>
     <color name="bottom_sheet_text_color">@android:color/black</color>
     <color name="bounding_box_color">#234567</color>
+    <color name="button_background">#3F51B5</color>
     <color name="green_primary">#4CAF50</color>
+    <color name="header_background">#3F51B5</color>
     <color name="icActive">#FFFFFFFF</color>
     <color name="icFocused">#DDFFFFFF</color>
     <color name="icPressed">#AAFFFFFF</color>

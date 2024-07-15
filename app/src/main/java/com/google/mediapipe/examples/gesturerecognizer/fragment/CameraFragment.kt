@@ -61,6 +61,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import java.io.FileInputStream
 import android.content.pm.PackageManager
+import com.google.mediapipe.examples.gesturerecognizer.SessionSummaryActivity
 
 import java.util.*
 
@@ -121,7 +122,33 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
 
+    fun getSessionSummary(): Map<String, Int> {
+        return gestureRecognizerHelper.getSessionSummary()
+    }
 
+    fun getTotalPoints(): Int {
+        return gestureRecognizerHelper.getTotalPoints()
+    }
+
+    fun stopCameraAndShowSummary() {
+        // Stop the camera
+        cameraProvider?.unbindAll()
+
+        // Collect session data
+        val classCountMap = gestureRecognizerHelper.getSessionSummary()
+        val totalPoints = gestureRecognizerHelper.getTotalPoints()
+
+        // Create an intent to start the SessionSummaryActivity
+        Log.d("hhhhhhh", "before")
+        val sessionSummaryIntent = Intent(requireContext(), SessionSummaryActivity::class.java)
+        sessionSummaryIntent.putExtra("classCountMap", HashMap(classCountMap))
+        sessionSummaryIntent.putExtra("totalPoints", totalPoints)
+        startActivity(sessionSummaryIntent)
+        Log.d("hhhhhhh", "after")
+
+        // Finish the activity
+        activity?.finish()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -373,9 +400,10 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
                 if(waitDelay>0){
                     waitDelay++
                     if(waitDelay==7){
-                            textToSpeechHelper.speak("five points")
-                            objectWasgrabbed=true
-                            waitDelay=0}
+                        textToSpeechHelper.speak("")
+                        //textToSpeechHelper.speak("five points")//Edited
+                        objectWasgrabbed=true
+                        waitDelay=0}
 
 
                 }
@@ -403,8 +431,8 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
 
                                 if(currentHand=="closed_palm" && prevHand=="open_palm" && waitDelay==0)
                                 {
-    //                                mediaPlayer.start()
-    //                                waitDelay++
+                                    //                                mediaPlayer.start()
+                                    //                                waitDelay++
                                     waitDelay=1
 //                                    textToSpeechHelper.speak("five points")
 //                                    objectWasgrabbed=true

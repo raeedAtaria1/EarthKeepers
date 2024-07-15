@@ -98,6 +98,7 @@
         <activity
             android:name="com.google.mediapipe.examples.gesturerecognizer.ProfileActivity"
             android:exported="true" />
+        <activity android:name="com.google.mediapipe.examples.gesturerecognizer.SessionSummaryActivity" />
 
         <service
             android:name="androidx.camera.core.impl.MetadataHolderService"

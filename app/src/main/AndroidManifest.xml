@@ -70,7 +70,7 @@
         <activity android:name=".scoreActivity" android:exported="true"/>
         <activity android:name=".HomeActivity" android:exported="true"/>
         <activity android:name=".ProfileActivity" android:exported="true"/>
-
+        <activity android:name=".SessionSummaryActivity" />
 
     </application>
 

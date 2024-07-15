@@ -39,6 +39,9 @@ import java.io.IOException
 import java.util.Date
 import com.google.mediapipe.examples.gesturerecognizer.Constants.LABELS_PATH
 import com.google.mediapipe.examples.gesturerecognizer.Constants.MODEL_PATH
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.mediapipe.examples.gesturerecognizer.util.TextToSpeechHelper
 
 class GestureRecognizerHelper(
     var minHandDetectionConfidence: Float = DEFAULT_HAND_DETECTION_CONFIDENCE,
@@ -50,6 +53,75 @@ class GestureRecognizerHelper(
     val gestureRecognizerListener: GestureRecognizerListener? = null
 
 ) {
+    // Points assignment function
+    private val classCountMap = mutableMapOf<String, Int>()
+    private var totalPoints = 0
+
+    // Points assignment function
+    private fun getPointsForClass(clsName: String): Int {
+        return when (clsName) {
+            "Battery" -> 10
+            "Can" -> 5
+            "Glass Bottle" -> 8
+            "Paper Cup" -> 3
+            "Peel" -> 2
+            "Plastic Bag" -> 4
+            "Plastic Bottle" -> 6
+            "Plastic Cup" -> 3
+            "Snack" -> 1
+            "Tissue" -> 1
+            else -> 0
+        }
+    }
+
+    // Function to update user points in Firestore
+    private fun updateUserPoints(points: Int, clsName: String) {
+        val userId = getCurrentUserId()
+        val firestore = FirebaseFirestore.getInstance()
+        val userRef = firestore.collection("users").document(userId)
+        lateinit var textToSpeechHelper: TextToSpeechHelper
+        textToSpeechHelper = TextToSpeechHelper(context) {
+            Log.d("TextToSpeechHelper", "TextToSpeech initialized")
+        }
+
+        userRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null && document.exists()) {
+                    val currentPoints = document.getLong("points")?.toInt() ?: 0
+                    val newPoints = currentPoints + points
+                    userRef.update("points", newPoints)
+                        .addOnSuccessListener {
+                            Log.d("GestureRecognizer", "Points updated successfully")
+                            // Speak the points
+                            textToSpeechHelper.speak("$clsName $points points added")
+                        }
+                        .addOnFailureListener { e ->
+                            Log.e("GestureRecognizer", "Error updating points", e)
+                        }
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e("GestureRecognizer", "Error fetching user data", e)
+            }
+        // Update session data
+        classCountMap[clsName] = classCountMap.getOrDefault(clsName, 0) + 1
+        totalPoints += points
+    }
+
+    // Function to get session summary
+    fun getSessionSummary(): Map<String, Int> {
+        return classCountMap
+    }
+
+    // Function to get total points
+    fun getTotalPoints(): Int {
+        return totalPoints
+    }
+
+    // Function to get the current user ID
+    private fun getCurrentUserId(): String {
+        return FirebaseAuth.getInstance().currentUser?.uid ?: ""
+    }
 
     // For this example this needs to be a var so it can be reset on changes. If the GestureRecognizer
     // will not change, a lazy val would be preferable.
@@ -169,20 +241,17 @@ class GestureRecognizerHelper(
                 }
 
 
-
-
-
                 override fun onDetect(boundingBoxes: List<BoundingBox>, inferenceTime: Long) {
 
+                    // Log the detection results
+                    for (box in boundingBoxes) {
+                        Log.d(YOLO123, "Detected object: ${box.clsName} with confidence: ${box.cnf}")
+                        // Add points based on detected class
+                        val points = getPointsForClass(box.clsName)
+                        updateUserPoints(points, box.clsName)
+                    }
 
-                        // Log the detection results
-                        for (box in boundingBoxes) {
-                            Log.d(YOLO123, "Detected object: ${box.clsName} with confidence: ${box.cnf}")
-                        }
-
-                        }
-
-
+                }
             })
             objectDetector.runDetection(rotatedBitmap)
         }

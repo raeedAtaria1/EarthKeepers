@@ -23,6 +23,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.mediapipe.examples.gesturerecognizer.databinding.ActivityMainBinding
 import android.widget.ImageView
 import android.content.Intent
+import android.util.Log
+import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
@@ -40,11 +42,27 @@ class MainActivity : AppCompatActivity() {
         val finishButton: ImageView = findViewById(R.id.finish_button)
 
         // Set OnClickListener to navigate to another page when finish_button is pressed
-        finishButton.setOnClickListener {
+        /*finishButton.setOnClickListener {
             // Replace NextActivity::class.java with the destination activity you want to navigate to
-            val intent = Intent(this, HomeActivity::class.java)
+            //val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, SessionSummaryActivity::class.java)
             startActivity(intent)
             finish()
+        }*/
+
+        // Set OnClickListener to navigate to SessionSummaryActivity when finish_button is pressed
+        finishButton.setOnClickListener {
+            Log.d("MainActivity", "Finish button clicked")
+
+            // Retrieve the current fragment from the NavHostFragment
+            val currentFragment = navHostFragment.childFragmentManager.primaryNavigationFragment
+
+            if (currentFragment is CameraFragment) {
+                Log.d("MainActivity", "CameraFragment found")
+                currentFragment.stopCameraAndShowSummary()
+            } else {
+                Log.e("MainActivity", "CameraFragment not found")
+            }
         }
 
     }

@@ -897,6 +897,7 @@ attr maxLines
 attr maxNumber
 attr maxVelocity
 attr maxWidth
+attr measureBottomPaddingFromLabelBaseline
 attr measureWithLargestChild
 attr menu
 attr menuAlignmentMode
@@ -1424,6 +1425,7 @@ color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
+color background_color
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -1443,6 +1445,7 @@ color browser_actions_bg_grey
 color browser_actions_divider_color
 color browser_actions_text_color
 color browser_actions_title_color
+color button_background
 color button_material_dark
 color button_material_light
 color call_notification_answer_color
@@ -1509,6 +1512,7 @@ color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
 color green_primary
+color header_background
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color icActive
@@ -2605,6 +2609,7 @@ dimen m3_comp_slider_disabled_handle_opacity
 dimen m3_comp_slider_disabled_inactive_track_opacity
 dimen m3_comp_slider_inactive_track_height
 dimen m3_comp_slider_stop_indicator_size
+dimen m3_comp_slider_value_indicator_active_bottom_space
 dimen m3_comp_snackbar_container_elevation
 dimen m3_comp_suggestion_chip_container_height
 dimen m3_comp_suggestion_chip_elevated_container_elevation
@@ -3346,6 +3351,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id backToHomeButton
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3661,6 +3667,7 @@ id percent
 id performance
 id permissions_fragment
 id pin
+id pointsTextView
 id position
 id postLayout
 id presence_threshold_minus
@@ -3758,6 +3765,8 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id summaryTextView
+id summaryTitleTextView
 id supportScrollUp
 id tabMode
 id tag_accessibility_actions
@@ -3975,6 +3984,7 @@ layout activity_login
 layout activity_main
 layout activity_profile
 layout activity_score
+layout activity_session_summary
 layout activity_signup
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -5513,7 +5523,7 @@ styleable MaterialDivider dividerColor dividerInsetEnd dividerInsetStart divider
 styleable MaterialRadioButton buttonTint useMaterialThemeColors
 styleable MaterialShape shapeAppearance shapeAppearanceOverlay
 styleable MaterialSwitch thumbIcon thumbIconSize thumbIconTint thumbIconTintMode trackDecoration trackDecorationTint trackDecorationTintMode
-styleable MaterialTextAppearance android_letterSpacing android_lineHeight lineHeight
+styleable MaterialTextAppearance android_letterSpacing android_fontVariationSettings android_lineHeight fontVariationSettings lineHeight
 styleable MaterialTextView android_textAppearance android_lineHeight lineHeight
 styleable MaterialTimePicker backgroundTint clockIcon keyboardIcon
 styleable MaterialToolbar logoAdjustViewBounds logoScaleType navigationIconTint subtitleCentered titleCentered
@@ -5536,7 +5546,7 @@ styleable NavHost navGraph
 styleable NavHostFragment defaultNavHost
 styleable NavInclude graph
 styleable NavigationBarActiveIndicator android_height android_width android_color marginHorizontal shapeAppearance
-styleable NavigationBarView activeIndicatorLabelPadding backgroundTint elevation itemActiveIndicatorStyle itemBackground itemIconGravity itemIconSize itemIconTint itemPaddingBottom itemPaddingTop itemRippleColor itemTextAppearanceActive itemTextAppearanceActiveBoldEnabled itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
+styleable NavigationBarView activeIndicatorLabelPadding backgroundTint elevation itemActiveIndicatorStyle itemBackground itemIconGravity itemIconSize itemIconTint itemPaddingBottom itemPaddingTop itemRippleColor itemTextAppearanceActive itemTextAppearanceActiveBoldEnabled itemTextAppearanceInactive itemTextColor labelVisibilityMode measureBottomPaddingFromLabelBaseline menu
 styleable NavigationRailView contentMarginTop headerLayout headerMarginBottom itemMinHeight itemSpacing menuGravity paddingBottomSystemWindowInsets paddingStartSystemWindowInsets paddingTopSystemWindowInsets shapeAppearance shapeAppearanceOverlay
 styleable NavigationView android_layout_gravity android_background android_fitsSystemWindows android_maxWidth bottomInsetScrimEnabled dividerInsetEnd dividerInsetStart drawerLayoutCornerSize elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconSize itemIconTint itemMaxLines itemRippleColor itemShapeAppearance itemShapeAppearanceOverlay itemShapeFillColor itemShapeInsetBottom itemShapeInsetEnd itemShapeInsetStart itemShapeInsetTop itemTextAppearance itemTextAppearanceActiveBoldEnabled itemTextColor itemVerticalPadding menu shapeAppearance shapeAppearanceOverlay subheaderColor subheaderInsetEnd subheaderInsetStart subheaderTextAppearance topInsetScrimEnabled
 styleable Navigator android_label android_id route

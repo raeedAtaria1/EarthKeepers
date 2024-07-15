@@ -1,12 +1,15 @@
 R_DEF: Internal format may change without notice
 local
 array delegate_spinner_titles
+color background_color
 color bg_nav_item
 color black
 color bottom_sheet_background
 color bottom_sheet_text_color
 color bounding_box_color
+color button_background
 color green_primary
+color header_background
 color icActive
 color icFocused
 color icPressed
@@ -50,6 +53,7 @@ drawable rounded_edittext
 drawable stop
 id action_camera_to_permissions
 id action_permissions_to_camera
+id backToHomeButton
 id bottom_sheet_layout
 id buttonLogin
 id buttonLogout
@@ -83,6 +87,7 @@ id logo
 id nav_graph
 id overlay
 id permissions_fragment
+id pointsTextView
 id presence_threshold_minus
 id presence_threshold_plus
 id presence_threshold_value
@@ -100,6 +105,8 @@ id recyclerview_results
 id relativeLayout
 id spinner_delegate
 id startButton
+id summaryTextView
+id summaryTitleTextView
 id textView
 id textView4
 id textViewBestScore
@@ -127,6 +134,7 @@ layout activity_login
 layout activity_main
 layout activity_profile
 layout activity_score
+layout activity_session_summary
 layout activity_signup
 layout capture_photo
 layout fragment_camera
