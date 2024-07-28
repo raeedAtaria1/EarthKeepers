@@ -240,17 +240,15 @@ class GestureRecognizerHelper(
                     Log.d(YOLO123, "Detected object nothing")
                 }
 
-
                 override fun onDetect(boundingBoxes: List<BoundingBox>, inferenceTime: Long) {
 
-                    // Log the detection results
-                    for (box in boundingBoxes) {
-                        Log.d(YOLO123, "Detected object: ${box.clsName} with confidence: ${box.cnf}")
-                        // Add points based on detected class
-                        val points = getPointsForClass(box.clsName)
-                        updateUserPoints(points, box.clsName)
-                    }
-
+                        // Log the detection results
+                        for (box in boundingBoxes) {
+                            Log.d(YOLO123, "Detected object: ${box.clsName} with confidence: ${box.cnf}")
+                            // Add points based on detected class
+                            val points = getPointsForClass(box.clsName)
+                            updateUserPoints(points, box.clsName)
+                        }
                 }
             })
             objectDetector.runDetection(rotatedBitmap)

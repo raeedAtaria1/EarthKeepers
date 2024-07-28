@@ -3428,6 +3428,7 @@ int id design_menu_item_action_area 0x7f0900a8
 int id design_menu_item_action_area_stub 0x7f0900a9
 int id design_menu_item_text 0x7f0900aa
 int id design_navigation_view 0x7f0900ab
+int id detectedItemsTextView 0x7f09025d
 int id detection_threshold_minus 0x7f0900ac
 int id detection_threshold_plus 0x7f0900ad
 int id detection_threshold_value 0x7f0900ae
@@ -3575,6 +3576,7 @@ int id material_timepicker_ok_button 0x7f09013b
 int id material_timepicker_view 0x7f09013c
 int id material_value_index 0x7f09013d
 int id matrix 0x7f09013e
+int id maxPointsTextView 0x7f09025e
 int id message 0x7f09013f
 int id middle 0x7f090140
 int id mini 0x7f090141
@@ -3673,6 +3675,7 @@ int id presence_threshold_minus 0x7f09019d
 int id presence_threshold_plus 0x7f09019e
 int id presence_threshold_value 0x7f09019f
 int id pressed 0x7f0901a0
+int id previewView 0x7f09025f
 int id progress 0x7f0901a1
 int id progress_circular 0x7f0901a2
 int id progress_horizontal 0x7f0901a3
@@ -3756,6 +3759,7 @@ int id standard 0x7f0901f0
 int id start 0x7f0901f1
 int id startButton 0x7f0901f2
 int id startHorizontal 0x7f0901f3
+int id startSessionButton 0x7f090260
 int id startToEnd 0x7f0901f4
 int id startVertical 0x7f0901f5
 int id staticLayout 0x7f0901f6
@@ -3765,7 +3769,6 @@ int id stretch 0x7f0901f9
 int id submenuarrow 0x7f0901fa
 int id submit_area 0x7f0901fb
 int id summaryTextView 0x7f0901fc
-int id summaryTitleTextView 0x7f0901fd
 int id supportScrollUp 0x7f0901fe
 int id tabMode 0x7f0901ff
 int id tag_accessibility_actions 0x7f090200
@@ -3781,6 +3784,7 @@ int id tag_transition_group 0x7f090209
 int id tag_unhandled_key_event_manager 0x7f09020a
 int id tag_unhandled_key_listeners 0x7f09020b
 int id tag_window_insets_animation_callback 0x7f09020c
+int id takePictureButton 0x7f090261
 int id text 0x7f09020d
 int id text2 0x7f09020e
 int id textEnd 0x7f09020f
@@ -3981,6 +3985,7 @@ int layout abc_tooltip 0x7f0c001b
 int layout activity_home 0x7f0c001c
 int layout activity_login 0x7f0c001d
 int layout activity_main 0x7f0c001e
+int layout activity_pre_session 0x7f0c007a
 int layout activity_profile 0x7f0c001f
 int layout activity_score 0x7f0c0020
 int layout activity_session_summary 0x7f0c0021

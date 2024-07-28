@@ -26,7 +26,8 @@ class HomeActivity: AppCompatActivity() {
         val startButton: Button = findViewById(R.id.startButton)
         startButton.setOnClickListener {
             // Create an Intent to start MainActivity
-            val intent = Intent(this@HomeActivity, MainActivity::class.java)
+            //val intent = Intent(this@HomeActivity, MainActivity::class.java)
+            val intent = Intent(this, PreSessionActivity::class.java)
             startActivity(intent)
         }
         // Accessing views using findViewById

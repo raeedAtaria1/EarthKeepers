@@ -62,6 +62,7 @@ id buttonSignUp
 id camera_container
 id camera_fragment
 id clickme
+id detectedItemsTextView
 id detection_threshold_minus
 id detection_threshold_plus
 id detection_threshold_value
@@ -84,6 +85,7 @@ id inference_time_val
 id linearLayoutContent
 id listViewScores
 id logo
+id maxPointsTextView
 id nav_graph
 id overlay
 id permissions_fragment
@@ -91,6 +93,7 @@ id pointsTextView
 id presence_threshold_minus
 id presence_threshold_plus
 id presence_threshold_value
+id previewView
 id progress
 id radioButtonFemale
 id radioButtonLeft
@@ -105,8 +108,9 @@ id recyclerview_results
 id relativeLayout
 id spinner_delegate
 id startButton
+id startSessionButton
 id summaryTextView
-id summaryTitleTextView
+id takePictureButton
 id textView
 id textView4
 id textViewBestScore
@@ -132,6 +136,7 @@ integer bottom_sheet_control_text_min_ems
 layout activity_home
 layout activity_login
 layout activity_main
+layout activity_pre_session
 layout activity_profile
 layout activity_score
 layout activity_session_summary

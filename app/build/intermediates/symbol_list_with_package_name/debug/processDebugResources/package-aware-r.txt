@@ -3429,6 +3429,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detectedItemsTextView
 id detection_threshold_minus
 id detection_threshold_plus
 id detection_threshold_value
@@ -3576,6 +3577,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id maxPointsTextView
 id message
 id middle
 id mini
@@ -3674,6 +3676,7 @@ id presence_threshold_minus
 id presence_threshold_plus
 id presence_threshold_value
 id pressed
+id previewView
 id progress
 id progress_circular
 id progress_horizontal
@@ -3757,6 +3760,7 @@ id standard
 id start
 id startButton
 id startHorizontal
+id startSessionButton
 id startToEnd
 id startVertical
 id staticLayout
@@ -3766,7 +3770,6 @@ id stretch
 id submenuarrow
 id submit_area
 id summaryTextView
-id summaryTitleTextView
 id supportScrollUp
 id tabMode
 id tag_accessibility_actions
@@ -3782,6 +3785,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id takePictureButton
 id text
 id text2
 id textEnd
@@ -3982,6 +3986,7 @@ layout abc_tooltip
 layout activity_home
 layout activity_login
 layout activity_main
+layout activity_pre_session
 layout activity_profile
 layout activity_score
 layout activity_session_summary

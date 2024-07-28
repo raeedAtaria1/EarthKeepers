@@ -15,17 +15,21 @@ class SessionSummaryActivity : AppCompatActivity() {
 
         val classCountMap = intent.getSerializableExtra("classCountMap") as? Map<String, Int>
         val totalPoints = intent.getIntExtra("totalPoints", 0)
+        val maxPoints = intent.getIntExtra("maxPoints", 0) // Receive maxPoints from the intent
 
         // Log the received data for debugging
         Log.d("SessionSummaryActivity", "Received Class Count Map: $classCountMap")
         Log.d("SessionSummaryActivity", "Received Total Points: $totalPoints")
+        Log.d("SessionSummaryActivity", "Received Max Points: $maxPoints") // Log the maxPoints
 
         val summaryTextView: TextView = findViewById(R.id.summaryTextView)
         val pointsTextView: TextView = findViewById(R.id.pointsTextView)
+        val maxPointsTextView: TextView = findViewById(R.id.maxPointsTextView) // Add TextView for maxPoints
         val backToHomeButton: Button = findViewById(R.id.backToHomeButton)
 
         summaryTextView.text = buildSummaryString(classCountMap)
         pointsTextView.text = "Total Points: $totalPoints"
+        maxPointsTextView.text = "Max Points in a Session: $maxPoints" // Set text for maxPoints
 
         backToHomeButton.setOnClickListener {
             Log.d("SessionSummaryActivity", "Back to Home button clicked")

@@ -1,8 +1,11 @@
+// CameraFragment.kt
 package com.google.mediapipe.examples.gesturerecognizer.fragment
-import android.content.SharedPreferences
+
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -24,12 +27,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Toast
-import androidx.camera.core.AspectRatio
-import androidx.camera.core.Camera
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageAnalysis
-import androidx.camera.core.ImageProxy
-import androidx.camera.core.Preview
+import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -52,18 +50,9 @@ import java.util.concurrent.TimeUnit
 import java.util.Date
 import java.text.SimpleDateFormat
 import androidx.core.content.FileProvider
-import android.content.Intent
-import android.content.ContentValues
-import android.provider.MediaStore
-import android.graphics.BitmapFactory
-import android.widget.Button
-import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 import java.io.FileInputStream
 import android.content.pm.PackageManager
 import com.google.mediapipe.examples.gesturerecognizer.SessionSummaryActivity
-
-import java.util.*
 
 class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerListener {
     private lateinit var mediaPlayer: MediaPlayer
@@ -84,8 +73,6 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
         private const val TAG = "Hand gesture recognizer"
         private const val REQUEST_EXTERNAL_STORAGE = 1
         var objectWasgrabbed: Boolean = false
-
-
     }
 
     private var _fragmentCameraBinding: FragmentCameraBinding? = null
@@ -131,23 +118,37 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
     }
 
     fun stopCameraAndShowSummary() {
+        Log.d("CameraFragment", "Stopping camera and showing summary")
+
         // Stop the camera
         cameraProvider?.unbindAll()
 
         // Collect session data
-        val classCountMap = gestureRecognizerHelper.getSessionSummary()
-        val totalPoints = gestureRecognizerHelper.getTotalPoints()
+        val classCountMap = getSessionSummary()
+        val totalPoints = getTotalPoints()
+
+        // Retrieve max points from SharedPreferences
+        val sharedPref = requireContext().getSharedPreferences("userData", Context.MODE_PRIVATE)
+        val maxPoints = sharedPref.getInt("max_points", 0)
+        Log.d("CameraFragment", "Max Points from PreSessionActivity: $maxPoints")
 
         // Create an intent to start the SessionSummaryActivity
-        Log.d("hhhhhhh", "before")
         val sessionSummaryIntent = Intent(requireContext(), SessionSummaryActivity::class.java)
         sessionSummaryIntent.putExtra("classCountMap", HashMap(classCountMap))
         sessionSummaryIntent.putExtra("totalPoints", totalPoints)
+        sessionSummaryIntent.putExtra("maxPoints", maxPoints) // Pass maxPoints to the intent
         startActivity(sessionSummaryIntent)
-        Log.d("hhhhhhh", "after")
 
         // Finish the activity
         activity?.finish()
+    }
+
+
+    fun stopBackgroundMusic() {
+        Log.d("CameraFragment", "Stopping background music")
+        if (this::backgroundMusicPlayer.isInitialized && backgroundMusicPlayer.isPlaying) {
+            backgroundMusicPlayer.pause()
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -389,80 +390,53 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
 // image height/width to scale and place the landmarks properly through
 // OverlayView. Only one result is expected at a time. If two or more
 // hands are seen in the camera frame, only one will be processed.
-    override fun onResults(
-        resultBundle: GestureRecognizerHelper.ResultBundle
-    ) {
+    override fun onResults(resultBundle: GestureRecognizerHelper.ResultBundle) {
         determine_hand_prefrence()
         activity?.runOnUiThread {
-
-
             if (_fragmentCameraBinding != null) {
                 if(waitDelay>0){
                     waitDelay++
                     if(waitDelay==7){
                         textToSpeechHelper.speak("")
-                        //textToSpeechHelper.speak("five points")//Edited
                         objectWasgrabbed=true
-                        waitDelay=0}
-
-
+                        waitDelay=0
+                    }
                 }
-                // Show result of recognized gesture
+
                 val gestureCategories = resultBundle.results.first().gestures()
                 if (gestureCategories.isNotEmpty()) {
                     if(!backgroundMusicPlayer.isPlaying()){
                         backgroundMusicPlayer.start()
                     }
-                    var flag=0
+                    var flag = 0
+                    if(waitDelay == 0) {
+                        for(i in 0 until gestureCategories.size) {
+                            if(resultBundle.results.first().handedness().get(i).get(0).displayName() == prefferedHand) {
+                                flag = 1
+                                var temp = currentHand
+                                currentHand = resultBundle.results.first().gestures().get(i).get(0).categoryName()
+                                if(prevHand != currentHand)
+                                    prevHand = temp
+                                gestureRecognizerResultAdapter.updateResults(gestureCategories.get(i))
 
-                    if(waitDelay==0)
-                        for(i in 0 until gestureCategories.size){
-                            if(resultBundle.results.first().handedness().get(i).get(0).displayName()==prefferedHand) {
-
-                                flag=1
-                                var temp=currentHand
-                                currentHand=resultBundle.results.first().gestures().get(i).get(0).categoryName()
-                                if(prevHand!=currentHand)
-                                    prevHand=temp
-                                gestureRecognizerResultAdapter.updateResults(
-                                    gestureCategories.get(i)
-                                )
-
-
-                                if(currentHand=="closed_palm" && prevHand=="open_palm" && waitDelay==0)
-                                {
-                                    //                                mediaPlayer.start()
-                                    //                                waitDelay++
-                                    waitDelay=1
-//                                    textToSpeechHelper.speak("five points")
-//                                    objectWasgrabbed=true
-
-
-                                    //add taking an screen shoot
-                                    //val screenshot = takeScreenshot()
-                                    // Save screenshot to gallery
-
+                                if(currentHand == "closed_palm" && prevHand == "open_palm" && waitDelay == 0) {
+                                    waitDelay = 1
                                 }
-
-
                                 break
                             }
                         }
-                    if(flag==0){
+                    }
+                    if(flag == 0) {
                         gestureRecognizerResultAdapter.updateResults(emptyList())
                         backgroundMusicPlayer.pause()
                     }
-
-
                 } else {
                     gestureRecognizerResultAdapter.updateResults(emptyList())
                     backgroundMusicPlayer.pause()
                 }
 
-                fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
-                    String.format("%d ms", resultBundle.inferenceTime)
+                fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text = String.format("%d ms", resultBundle.inferenceTime)
 
-                // Pass necessary information to OverlayView for drawing on the canvas
                 val overlayView = fragmentCameraBinding.overlay
                 overlayView.setResults(
                     resultBundle.results.first(),
@@ -470,16 +444,21 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
                     resultBundle.inputImageWidth,
                     RunningMode.LIVE_STREAM
                 )
-
-                // If the camera feed is flipped horizontally, adjust the drawing accordingly
                 if (fragmentCameraBinding.viewFinder.scaleX < 0) {
                     overlayView.scaleX = -1f
                 } else {
                     overlayView.scaleX = 1f
                 }
-
-                // Force a redraw
                 overlayView.invalidate()
+            }
+
+            // Check if total points exceed max points
+            val totalPoints = getTotalPoints()
+            val sharedPref = requireContext().getSharedPreferences("userData", Context.MODE_PRIVATE)
+            val maxPoints = sharedPref.getInt("max_points", 0)
+            if (totalPoints >= maxPoints) {
+                backgroundMusicPlayer.pause()
+                stopCameraAndShowSummary()
             }
         }
     }
@@ -489,9 +468,6 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
         activity?.runOnUiThread {
             Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
             gestureRecognizerResultAdapter.updateResults(emptyList())
-
-
-
 
             if (errorCode == GestureRecognizerHelper.GPU_ERROR) {
                 fragmentCameraBinding.bottomSheetLayout.spinnerDelegate.setSelection(
