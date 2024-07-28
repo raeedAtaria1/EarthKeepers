@@ -71,6 +71,8 @@
         <activity android:name=".HomeActivity" android:exported="true"/>
         <activity android:name=".ProfileActivity" android:exported="true"/>
         <activity android:name=".SessionSummaryActivity" />
+        <activity android:name=".PreSessionActivity" />
+
 
     </application>
 

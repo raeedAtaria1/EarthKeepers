@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-77:12
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-77:12
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-77:12
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-77:12
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-79:12
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-79:12
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-79:12
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:17:1-79:12
 MERGED from [androidx.databinding:viewbinding:8.4.1] C:\Users\Hp\.gradle\caches\transforms-4\ab3f755358cdf287d5c24e8488704ccb\transformed\viewbinding-8.4.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.5.3] C:\Users\Hp\.gradle\caches\transforms-4\6c301ddfca362f485817071fc4285f51\transformed\navigation-fragment-ktx-2.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment:2.5.3] C:\Users\Hp\.gradle\caches\transforms-4\358a8cb75ca885ab384d82cb69167bcb\transformed\navigation-fragment-2.5.3\AndroidManifest.xml:17:1-24:12
@@ -213,8 +213,8 @@ ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:40:5-65
 	android:name
 		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:40:22-62
 application
-ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:5-75:19
-INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:5-75:19
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:5-77:19
+INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:42:5-77:19
 MERGED from [com.google.android.material:material:1.13.0-alpha04] C:\Users\Hp\.gradle\caches\transforms-4\68a723453202f822a6447cbd42735df2\transformed\material-1.13.0-alpha04\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0-alpha04] C:\Users\Hp\.gradle\caches\transforms-4\68a723453202f822a6447cbd42735df2\transformed\material-1.13.0-alpha04\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Hp\.gradle\caches\transforms-4\7f6c457c5546f423318dda7ab1a27e8c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -373,6 +373,10 @@ activity#com.google.mediapipe.examples.gesturerecognizer.SessionSummaryActivity
 ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:73:9-60
 	android:name
 		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:73:19-57
+activity#com.google.mediapipe.examples.gesturerecognizer.PreSessionActivity
+ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:74:9-56
+	android:name
+		ADDED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml:74:19-53
 uses-sdk
 INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Hp\EarthKeepers\app\src\main\AndroidManifest.xml

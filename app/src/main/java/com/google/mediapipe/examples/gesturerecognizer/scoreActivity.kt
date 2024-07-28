@@ -24,6 +24,16 @@ class scoreActivity : AppCompatActivity() {
         setContentView(R.layout.activity_score)
 
         firestore = FirebaseFirestore.getInstance()
+        firestore.collection("users")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d("ScoreActivity", "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.e("ScoreActivity", "Error fetching user data: ", exception)
+            }
         listViewScores = findViewById(R.id.listViewScores)
 
         val sharedPref = getSharedPreferences("userData", MODE_PRIVATE)
