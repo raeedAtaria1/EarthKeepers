@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_signup">
+    android:background="@drawable/background_signup"
+    android:padding="16dp">
 
     <LinearLayout
         android:id="@+id/linearLayoutContent"
@@ -10,31 +11,31 @@
         android:orientation="vertical"
         android:gravity="center"
         android:padding="20dp"
-        android:layout_below="@id/logo"
+        android:background="@drawable/rounded_background"
+        android:elevation="4dp"
         android:layout_marginTop="20dp">
+
         <EditText
             android:id="@+id/editTextFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Last Name"
-            android:padding="15dp"
+            android:hint="First Name"
             android:textSize="16sp"
-            android:background="@drawable/rounded_edittext"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
-            />
+            android:background="@drawable/edittext_border"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
+
         <EditText
             android:id="@+id/editTextLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="Last Name"
-            android:padding="15dp"
             android:textSize="16sp"
-            android:background="@drawable/rounded_edittext"
-            android:textColorHint="@android:color/white"
-            android:textColor="@android:color/white"/>
+            android:background="@drawable/edittext_border"
+            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@android:color/black" />
 
         <EditText
             android:id="@+id/editTextEmail"
@@ -42,11 +43,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="Email"
-            android:padding="15dp"
             android:textSize="16sp"
-            android:background="@drawable/rounded_edittext"
-            android:textColorHint="@android:color/white"
-            android:textColor="@android:color/white"/>
+            android:background="@drawable/edittext_border"
+            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@android:color/black" />
 
         <EditText
             android:id="@+id/editTextPassword"
@@ -55,19 +55,26 @@
             android:layout_marginTop="20dp"
             android:hint="Password"
             android:inputType="textPassword"
-            android:padding="15dp"
             android:textSize="16sp"
-            android:background="@drawable/rounded_edittext"
-            android:textColorHint="@android:color/white"
+            android:background="@drawable/edittext_border"
+            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@android:color/black" />
 
-            android:textColor="@android:color/white"/>
+        <TextView
+            android:id="@+id/textViewGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="20dp" />
 
         <RadioGroup
             android:id="@+id/radioGroupGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="8dp">
 
             <RadioButton
                 android:id="@+id/radioButtonMale"
@@ -75,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:text="Male"
                 android:textSize="16sp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/black" />
 
             <RadioButton
                 android:id="@+id/radioButtonFemale"
@@ -83,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:text="Female"
                 android:textSize="16sp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/black" />
 
             <RadioButton
                 android:id="@+id/radioButtonOther"
@@ -91,16 +98,24 @@
                 android:layout_height="wrap_content"
                 android:text="Other"
                 android:textSize="16sp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/black" />
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/textViewHandPreference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preferred Hand"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="20dp" />
 
         <RadioGroup
             android:id="@+id/radioGroupHandPreference"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:textColor="@android:color/white">
+            android:layout_marginTop="8dp">
 
             <RadioButton
                 android:id="@+id/radioButtonLeftHanded"
@@ -108,7 +123,8 @@
                 android:layout_height="wrap_content"
                 android:text="Left-Handed"
                 android:textSize="16sp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="16dp" />
 
             <RadioButton
                 android:id="@+id/radioButtonRightHanded"
@@ -116,8 +132,7 @@
                 android:layout_height="wrap_content"
                 android:text="Right-Handed"
                 android:textSize="16sp"
-                android:textColor="@android:color/white"
-                />
+                android:textColor="@android:color/black" />
         </RadioGroup>
 
         <Button
@@ -128,7 +143,9 @@
             android:background="@drawable/rounded_button"
             android:padding="15dp"
             android:text="Sign Up"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewLogin"
@@ -139,6 +156,7 @@
             android:focusable="true"
             android:text="Already have an account? Login"
             android:textColor="@android:color/holo_blue_dark"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:layout_gravity="center" />
     </LinearLayout>
 </RelativeLayout>

@@ -37,13 +37,7 @@ public final class ActivityProfileBinding implements ViewBinding {
   public final EditText editTextLastName;
 
   @NonNull
-  public final ImageView imageView;
-
-  @NonNull
-  public final ImageView imageView2;
-
-  @NonNull
-  public final ImageView imageView3;
+  public final ImageView imageViewProfile;
 
   @NonNull
   public final RadioButton radioButtonLeft;
@@ -71,8 +65,7 @@ public final class ActivityProfileBinding implements ViewBinding {
 
   private ActivityProfileBinding(@NonNull LinearLayout rootView, @NonNull Button buttonLogout,
       @NonNull Button buttonSave, @NonNull EditText editTextFirstName,
-      @NonNull EditText editTextLastName, @NonNull ImageView imageView,
-      @NonNull ImageView imageView2, @NonNull ImageView imageView3,
+      @NonNull EditText editTextLastName, @NonNull ImageView imageViewProfile,
       @NonNull RadioButton radioButtonLeft, @NonNull RadioButton radioButtonRight,
       @NonNull RadioGroup radioGroupHandPreference, @NonNull TextView textViewBestScore,
       @NonNull TextView textViewFirstName, @NonNull TextView textViewHandPreference,
@@ -82,9 +75,7 @@ public final class ActivityProfileBinding implements ViewBinding {
     this.buttonSave = buttonSave;
     this.editTextFirstName = editTextFirstName;
     this.editTextLastName = editTextLastName;
-    this.imageView = imageView;
-    this.imageView2 = imageView2;
-    this.imageView3 = imageView3;
+    this.imageViewProfile = imageViewProfile;
     this.radioButtonLeft = radioButtonLeft;
     this.radioButtonRight = radioButtonRight;
     this.radioGroupHandPreference = radioGroupHandPreference;
@@ -146,21 +137,9 @@ public final class ActivityProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView;
-      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
-      if (imageView == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView2;
-      ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView2 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView3;
-      ImageView imageView3 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView3 == null) {
+      id = R.id.imageViewProfile;
+      ImageView imageViewProfile = ViewBindings.findChildViewById(rootView, id);
+      if (imageViewProfile == null) {
         break missingId;
       }
 
@@ -213,9 +192,9 @@ public final class ActivityProfileBinding implements ViewBinding {
       }
 
       return new ActivityProfileBinding((LinearLayout) rootView, buttonLogout, buttonSave,
-          editTextFirstName, editTextLastName, imageView, imageView2, imageView3, radioButtonLeft,
-          radioButtonRight, radioGroupHandPreference, textViewBestScore, textViewFirstName,
-          textViewHandPreference, textViewLastName, textViewPoints);
+          editTextFirstName, editTextLastName, imageViewProfile, radioButtonLeft, radioButtonRight,
+          radioGroupHandPreference, textViewBestScore, textViewFirstName, textViewHandPreference,
+          textViewLastName, textViewPoints);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

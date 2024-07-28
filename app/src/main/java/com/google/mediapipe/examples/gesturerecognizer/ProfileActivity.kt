@@ -33,25 +33,7 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         // Accessing views using findViewById
-        val imageViewPeofile = findViewById<ImageView>(R.id.imageView3)
-        imageViewPeofile.setOnClickListener {
-            // Launch ScoreActivity here
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-        }
-        val imageViewMainPageButton1 = findViewById<ImageView>(R.id.imageView)
-        imageViewMainPageButton1.setOnClickListener {
-            // Launch ScoreActivity here
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-        }
-        // Accessing views using findViewById
-        val imageViewMedalScores = findViewById<ImageView>(R.id.imageView2)
-        imageViewMedalScores.setOnClickListener {
-            // Launch ScoreActivity here
-            val intent = Intent(this, scoreActivity::class.java)
-            startActivity(intent)
-        }
+
 
 
         // Initialize Firebase Auth and Firestore

@@ -1425,6 +1425,7 @@ color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
+color backgroundColor
 color background_color
 color background_floating_material_dark
 color background_floating_material_light
@@ -1445,6 +1446,7 @@ color browser_actions_bg_grey
 color browser_actions_divider_color
 color browser_actions_text_color
 color browser_actions_title_color
+color buttonColor
 color button_background
 color button_material_dark
 color button_material_light
@@ -1454,6 +1456,9 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -1465,6 +1470,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color darker_gray
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -2181,6 +2187,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color primaryTextColor
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2191,6 +2198,7 @@ color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color ripple_material_dark
 color ripple_material_light
+color secondaryTextColor
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
@@ -2201,6 +2209,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color teal_700
 color toolbar_background
 color tooltip_background_dark
 color tooltip_background_light
@@ -3118,6 +3127,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable circle_background
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3143,6 +3153,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable edittext_background
+drawable edittext_border
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_back_black_24
@@ -3172,8 +3184,8 @@ drawable ic_password
 drawable ic_plus
 drawable ic_search_black_24
 drawable icn_chevron_up
-drawable img
 drawable indeterminate_static
+drawable listview_background
 drawable logo
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3251,6 +3263,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable profile_icon
 drawable radio_unchecked
+drawable rounded_background
 drawable rounded_button
 drawable rounded_edittext
 drawable stop
@@ -3523,6 +3536,7 @@ id imageView
 id imageView2
 id imageView3
 id imageViewLogo
+id imageViewProfile
 id immediateStop
 id included
 id indeterminate
@@ -3798,6 +3812,7 @@ id textView4
 id textViewBestScore
 id textViewFirstName
 id textViewFullName
+id textViewGender
 id textViewHandPreference
 id textViewLastName
 id textViewLogin

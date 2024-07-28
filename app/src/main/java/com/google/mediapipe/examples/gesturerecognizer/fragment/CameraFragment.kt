@@ -138,7 +138,6 @@ class CameraFragment : Fragment(), GestureRecognizerHelper.GestureRecognizerList
         sessionSummaryIntent.putExtra("totalPoints", totalPoints)
         sessionSummaryIntent.putExtra("maxPoints", maxPoints) // Pass maxPoints to the intent
         startActivity(sessionSummaryIntent)
-
         // Finish the activity
         activity?.finish()
     }

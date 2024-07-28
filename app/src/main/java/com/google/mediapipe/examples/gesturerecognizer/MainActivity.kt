@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("MainActivity", "CameraFragment found")
                 currentFragment.stopBackgroundMusic()  // Stop the background music
                 currentFragment.stopCameraAndShowSummary()
+                finish()
             } else {
                 Log.e("MainActivity", "CameraFragment not found")
             }

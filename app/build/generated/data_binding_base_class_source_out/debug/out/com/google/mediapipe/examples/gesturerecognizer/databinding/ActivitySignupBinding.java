@@ -64,6 +64,12 @@ public final class ActivitySignupBinding implements ViewBinding {
   public final RadioGroup radioGroupHandPreference;
 
   @NonNull
+  public final TextView textViewGender;
+
+  @NonNull
+  public final TextView textViewHandPreference;
+
+  @NonNull
   public final TextView textViewLogin;
 
   private ActivitySignupBinding(@NonNull RelativeLayout rootView, @NonNull Button buttonSignUp,
@@ -73,6 +79,7 @@ public final class ActivitySignupBinding implements ViewBinding {
       @NonNull RadioButton radioButtonLeftHanded, @NonNull RadioButton radioButtonMale,
       @NonNull RadioButton radioButtonOther, @NonNull RadioButton radioButtonRightHanded,
       @NonNull RadioGroup radioGroupGender, @NonNull RadioGroup radioGroupHandPreference,
+      @NonNull TextView textViewGender, @NonNull TextView textViewHandPreference,
       @NonNull TextView textViewLogin) {
     this.rootView = rootView;
     this.buttonSignUp = buttonSignUp;
@@ -88,6 +95,8 @@ public final class ActivitySignupBinding implements ViewBinding {
     this.radioButtonRightHanded = radioButtonRightHanded;
     this.radioGroupGender = radioGroupGender;
     this.radioGroupHandPreference = radioGroupHandPreference;
+    this.textViewGender = textViewGender;
+    this.textViewHandPreference = textViewHandPreference;
     this.textViewLogin = textViewLogin;
   }
 
@@ -196,6 +205,18 @@ public final class ActivitySignupBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textViewGender;
+      TextView textViewGender = ViewBindings.findChildViewById(rootView, id);
+      if (textViewGender == null) {
+        break missingId;
+      }
+
+      id = R.id.textViewHandPreference;
+      TextView textViewHandPreference = ViewBindings.findChildViewById(rootView, id);
+      if (textViewHandPreference == null) {
+        break missingId;
+      }
+
       id = R.id.textViewLogin;
       TextView textViewLogin = ViewBindings.findChildViewById(rootView, id);
       if (textViewLogin == null) {
@@ -205,7 +226,8 @@ public final class ActivitySignupBinding implements ViewBinding {
       return new ActivitySignupBinding((RelativeLayout) rootView, buttonSignUp, editTextEmail,
           editTextFirstName, editTextLastName, editTextPassword, linearLayoutContent,
           radioButtonFemale, radioButtonLeftHanded, radioButtonMale, radioButtonOther,
-          radioButtonRightHanded, radioGroupGender, radioGroupHandPreference, textViewLogin);
+          radioButtonRightHanded, radioGroupGender, radioGroupHandPreference, textViewGender,
+          textViewHandPreference, textViewLogin);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

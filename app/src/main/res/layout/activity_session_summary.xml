@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/backgroundColor">
 
     <TextView
         android:id="@+id/summaryTextView"
@@ -11,7 +12,9 @@
         android:layout_height="wrap_content"
         android:text="Summary"
         android:textSize="18sp"
-        android:padding="8dp"/>
+        android:textColor="@color/primaryTextColor"
+        android:padding="8dp"
+        android:fontFamily="sans-serif-medium"/>
 
     <TextView
         android:id="@+id/pointsTextView"
@@ -19,7 +22,9 @@
         android:layout_height="wrap_content"
         android:text="Total Points"
         android:textSize="18sp"
-        android:padding="8dp"/>
+        android:textColor="@color/primaryTextColor"
+        android:padding="8dp"
+        android:fontFamily="sans-serif-medium"/>
 
     <TextView
         android:id="@+id/maxPointsTextView"
@@ -27,12 +32,19 @@
         android:layout_height="wrap_content"
         android:text="Max Points in a Session"
         android:textSize="18sp"
-        android:padding="8dp"/>
+        android:textColor="@color/primaryTextColor"
+        android:padding="8dp"
+        android:fontFamily="sans-serif-medium"/>
 
     <Button
         android:id="@+id/backToHomeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back to Home"
-        android:padding="8dp"/>
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/buttonColor"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"/>
 </LinearLayout>

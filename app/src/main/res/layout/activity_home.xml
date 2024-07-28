@@ -55,7 +55,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="There is only one solution for Earth`s pollution,and it`s YOU! "
-                android:textColor="#8BC34A"
+                android:textColor="#007F8B"
                 android:textSize="32dp" />
         </LinearLayout>
 
@@ -73,7 +73,8 @@
                 android:text="Start"
                 android:textColor="@android:color/white"
                 android:textSize="32dp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:background="@color/button_background"/>
         </LinearLayout>
 
         <LinearLayout

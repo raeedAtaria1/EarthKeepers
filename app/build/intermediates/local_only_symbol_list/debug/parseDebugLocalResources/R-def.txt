@@ -1,13 +1,19 @@
 R_DEF: Internal format may change without notice
 local
 array delegate_spinner_titles
+color backgroundColor
 color background_color
 color bg_nav_item
 color black
 color bottom_sheet_background
 color bottom_sheet_text_color
 color bounding_box_color
+color buttonColor
 color button_background
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
+color darker_gray
 color green_primary
 color header_background
 color icActive
@@ -20,6 +26,9 @@ color mp_color_primary_dark
 color mp_color_primary_variant
 color mp_color_secondary
 color mp_color_secondary_variant
+color primaryTextColor
+color secondaryTextColor
+color teal_700
 color toolbar_background
 color white
 dimen bottom_sheet_control_btn_size
@@ -35,19 +44,23 @@ dimen round_button_medium
 dimen stroke_small
 drawable background_login
 drawable background_signup
+drawable circle_background
 drawable custom_radio_button
+drawable edittext_background
+drawable edittext_border
 drawable ic_baseline_add_24
 drawable ic_baseline_photo_camera_24
 drawable ic_baseline_photo_library_24
 drawable ic_minus
 drawable ic_plus
 drawable icn_chevron_up
-drawable img
+drawable listview_background
 drawable logo
 drawable medal_scores
 drawable media_pipe_banner
 drawable profile_icon
 drawable radio_unchecked
+drawable rounded_background
 drawable rounded_button
 drawable rounded_edittext
 drawable stop
@@ -80,6 +93,7 @@ id imageView
 id imageView2
 id imageView3
 id imageViewLogo
+id imageViewProfile
 id inference_time_label
 id inference_time_val
 id linearLayoutContent
@@ -116,6 +130,7 @@ id textView4
 id textViewBestScore
 id textViewFirstName
 id textViewFullName
+id textViewGender
 id textViewHandPreference
 id textViewLastName
 id textViewLogin
