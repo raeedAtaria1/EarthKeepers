@@ -27,6 +27,7 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import android.widget.LinearLayout
 
 class PreSessionActivity : AppCompatActivity() {
 
@@ -36,6 +37,9 @@ class PreSessionActivity : AppCompatActivity() {
     private lateinit var startSessionButton: Button
     private lateinit var imageCapture: ImageCapture
     private lateinit var cameraExecutor: ExecutorService
+    private lateinit var promptTextView: TextView
+    private lateinit var detectedItemsList: LinearLayout
+    private lateinit var totalPointsTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,8 +47,11 @@ class PreSessionActivity : AppCompatActivity() {
 
         previewView = findViewById(R.id.previewView)
         takePictureButton = findViewById(R.id.takePictureButton)
-        detectedItemsTextView = findViewById(R.id.detectedItemsTextView)
+        detectedItemsTextView = findViewById(R.id.detectedItemsHeaderTextView)
         startSessionButton = findViewById(R.id.startSessionButton)
+        promptTextView = findViewById(R.id.promptTextView)
+        detectedItemsList = findViewById(R.id.detectedItemsList)
+        totalPointsTextView = findViewById(R.id.totalPointsTextView)
 
         cameraExecutor = Executors.newSingleThreadExecutor()
 
@@ -135,25 +142,39 @@ class PreSessionActivity : AppCompatActivity() {
             override fun onEmptyDetect() {
                 Log.d(GestureRecognizerHelper.YOLO123, "Detected object nothing")
                 runOnUiThread {
-                    detectedItemsTextView.text = "No objects detected"
-                    detectedItemsTextView.visibility = View.VISIBLE
-                    startSessionButton.visibility = View.VISIBLE
+                    detectedItemsList.removeAllViews()
+                    totalPointsTextView.text = "Total Points: 0"
+                    promptTextView.visibility = View.VISIBLE
+                    startSessionButton.visibility = View.GONE
                 }
             }
 
             override fun onDetect(boundingBoxes: List<BoundingBox>, inferenceTime: Long) {
                 val detectedItems = boundingBoxes.map { it.clsName }
+                val detectedItemsCount = detectedItems.groupingBy { it }.eachCount()
                 val totalPoints = calculatePoints(detectedItems)
 
                 runOnUiThread {
-                    detectedItemsTextView.text = "Detected Items: $detectedItems\nTotal Points: $totalPoints"
+                    promptTextView.visibility = View.GONE
+                    detectedItemsList.removeAllViews()
+                    detectedItemsCount.forEach { (item, count) ->
+                        val itemPoints = getPointsForClass(item) * count
+                        val textView = TextView(this@PreSessionActivity).apply {
+                            text = "$item x$count     $itemPoints points"
+                            textSize = 16f
+                        }
+                        detectedItemsList.addView(textView)
+                    }
+
+                    totalPointsTextView.text = "Total Points: $totalPoints"
+
                     detectedItemsTextView.visibility = View.VISIBLE
                     startSessionButton.visibility = View.VISIBLE
 
                     // Store the sum of all detected points in SharedPreferences
                     val sharedPref = getSharedPreferences("userData", Context.MODE_PRIVATE)
                     with(sharedPref.edit()) {
-                        Log.d(GestureRecognizerHelper.YOLO123, "max_points: ${totalPoints}")
+                        Log.d(GestureRecognizerHelper.YOLO123, "max_points: $totalPoints")
                         putInt("max_points", totalPoints)
                         apply()
                     }
@@ -167,6 +188,7 @@ class PreSessionActivity : AppCompatActivity() {
         })
         objectDetector.runDetection(bitmap)
     }
+
 
     private fun getPointsForClass(clsName: String): Int {
         return when (clsName) {

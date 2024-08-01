@@ -56,6 +56,8 @@ class GestureRecognizerHelper(
     // Points assignment function
     private val classCountMap = mutableMapOf<String, Int>()
     private var totalPoints = 0
+    private var lastCaptureTime: Long = 0
+    private val captureDelay = 1000 // 1 seconds delay
 
     // Points assignment function
     private fun getPointsForClass(clsName: String): Int {
@@ -231,10 +233,13 @@ class GestureRecognizerHelper(
             matrix,
             true
         )
-        // Save the rotated bitmap to a file
-        if(CameraFragment.objectWasgrabbed==true){
+
+        // Ensure the object was grabbed and enough time has passed since the last capture
+        if (CameraFragment.objectWasgrabbed && (SystemClock.uptimeMillis() - lastCaptureTime > captureDelay)) {
             saveBitmap(rotatedBitmap, context, "recognized_frame_.jpg")
-            CameraFragment.objectWasgrabbed=false
+            CameraFragment.objectWasgrabbed = false
+            lastCaptureTime = SystemClock.uptimeMillis() // Update the last capture time
+
             objectDetector = ObjectDetector(context, MODEL_PATH, LABELS_PATH, object : ObjectDetector.DetectorListener {
                 override fun onEmptyDetect() {
                     Log.d(YOLO123, "Detected object nothing")
@@ -242,13 +247,13 @@ class GestureRecognizerHelper(
 
                 override fun onDetect(boundingBoxes: List<BoundingBox>, inferenceTime: Long) {
 
-                        // Log the detection results
-                        for (box in boundingBoxes) {
-                            Log.d(YOLO123, "Detected object: ${box.clsName} with confidence: ${box.cnf}")
-                            // Add points based on detected class
-                            val points = getPointsForClass(box.clsName)
-                            updateUserPoints(points, box.clsName)
-                        }
+                    // Log the detection results
+                    for (box in boundingBoxes) {
+                        Log.d(YOLO123, "Detected object: ${box.clsName} with confidence: ${box.cnf}")
+                        // Add points based on detected class
+                        val points = getPointsForClass(box.clsName)
+                        updateUserPoints(points, box.clsName)
+                    }
                 }
             })
             objectDetector.runDetection(rotatedBitmap)

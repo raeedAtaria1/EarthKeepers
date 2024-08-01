@@ -21,22 +21,63 @@
         app:layout_anchorGravity="center"
         android:background="@drawable/rounded_button" />
 
-    <TextView
-        android:id="@+id/detectedItemsTextView"
-        android:layout_width="551dp"
+    <LinearLayout
+        android:id="@+id/detectedItemsContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginBottom="16dp"
-        android:text="Detected Items:"
-        android:textSize="13sp"
-        android:visibility="visible"
-        android:gravity="start"
         android:padding="8dp"
         android:background="@android:color/white"
-        android:scrollbars="vertical"
-        android:maxLines="10"
-        android:ellipsize="end"
         app:layout_anchor="@id/previewView"
-        app:layout_anchorGravity="top|center" />
+        app:layout_anchorGravity="top|center">
+
+        <TextView
+            android:id="@+id/promptTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No objects detected. Please take a picture again."
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <TextView
+            android:id="@+id/detectedItemsHeaderTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detected Items:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:gravity="center_horizontal"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/detectedItemsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginVertical="8dp" />
+
+        <TextView
+            android:id="@+id/totalPointsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Points: 0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:gravity="center_horizontal" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/takePictureButton"
