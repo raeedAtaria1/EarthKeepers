@@ -62,7 +62,6 @@ class GestureRecognizerHelper(
     // Points assignment function
     private fun getPointsForClass(clsName: String): Int {
         return when (clsName) {
-            "Battery" -> 10
             "Can" -> 5
             "Glass Bottle" -> 8
             "Paper Cup" -> 3

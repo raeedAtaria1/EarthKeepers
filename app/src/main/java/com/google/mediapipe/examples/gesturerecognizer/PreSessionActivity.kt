@@ -192,7 +192,6 @@ class PreSessionActivity : AppCompatActivity() {
 
     private fun getPointsForClass(clsName: String): Int {
         return when (clsName) {
-            "Battery" -> 10
             "Can" -> 5
             "Glass Bottle" -> 8
             "Paper Cup" -> 3
@@ -208,7 +207,6 @@ class PreSessionActivity : AppCompatActivity() {
 
     private fun calculatePoints(detectedItems: List<String>): Int {
         val pointsMap = mapOf(
-            "Battery" to 10,
             "Can" to 5,
             "Glass Bottle" to 8,
             "Paper Cup" to 3,

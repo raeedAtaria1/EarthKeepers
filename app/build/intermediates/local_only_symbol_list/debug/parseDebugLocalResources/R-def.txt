@@ -75,7 +75,9 @@ id buttonSignUp
 id camera_container
 id camera_fragment
 id clickme
-id detectedItemsTextView
+id detectedItemsContainer
+id detectedItemsHeaderTextView
+id detectedItemsList
 id detection_threshold_minus
 id detection_threshold_plus
 id detection_threshold_value
@@ -109,6 +111,7 @@ id presence_threshold_plus
 id presence_threshold_value
 id previewView
 id progress
+id promptTextView
 id radioButtonFemale
 id radioButtonLeft
 id radioButtonLeftHanded
@@ -138,6 +141,7 @@ id textViewPoints
 id textViewSignUp
 id textViewTitle
 id toolbar
+id totalPointsTextView
 id tracking_threshold_minus
 id tracking_threshold_plus
 id tracking_threshold_value
