@@ -6,8 +6,6 @@
     android:orientation="vertical"
     android:background="@drawable/background_signup"
     android:padding="16dp">
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +14,6 @@
         android:background="@drawable/rounded_background"
         android:elevation="4dp"
         android:layout_marginBottom="16dp">
-
         <ImageView
             android:id="@+id/imageViewProfile"
             android:layout_width="64dp"
@@ -26,7 +23,6 @@
             android:background="@drawable/circle_background"
             android:scaleType="centerCrop"
             android:elevation="4dp" />
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"

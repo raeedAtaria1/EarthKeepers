@@ -58,8 +58,12 @@ class GestureRecognizerHelper(
     private var totalPoints = 0
     private var lastCaptureTime: Long = 0
     private val captureDelay = 1000 // 1 seconds delay
+    private var fivePhotos=0
+    val detectedObjectsList = mutableListOf<DetectedObject>()
 
     // Points assignment function
+    data class DetectedObject(var className: String, var count: Int = 0)
+
     private fun getPointsForClass(clsName: String): Int {
         return when (clsName) {
             "Can" -> 5
@@ -234,29 +238,94 @@ class GestureRecognizerHelper(
         )
 
         // Ensure the object was grabbed and enough time has passed since the last capture
-        if (CameraFragment.objectWasgrabbed && (SystemClock.uptimeMillis() - lastCaptureTime > captureDelay)) {
+        // Initialize a list to store detected object class names
+        // Initialize a list to store detected object class names and counts
+
+        if (CameraFragment.objectWasgrabbed || fivePhotos > 0) {
+            if (CameraFragment.objectWasgrabbed) {
+                fivePhotos = 4
+            }
+
             CameraFragment.objectWasgrabbed = false
-            saveBitmap(rotatedBitmap, context, "recognized_frame_.jpg")
-            lastCaptureTime = SystemClock.uptimeMillis() // Update the last capture time
+
+            val saveDirectory = File(context.getExternalFilesDir(null), "captured_images")
+            if (!saveDirectory.exists()) {
+                saveDirectory.mkdirs()
+            }
+
+            fivePhotos--
+
+            val filename = "recognized_frame_${5 - fivePhotos}.jpg"
+            val file = File(saveDirectory, filename)
+
+            saveBitmap(rotatedBitmap, context, filename)
+
+            lastCaptureTime = SystemClock.uptimeMillis()
 
             objectDetector = ObjectDetector(context, MODEL_PATH, LABELS_PATH, object : ObjectDetector.DetectorListener {
                 override fun onEmptyDetect() {
-                    Log.d(YOLO123, "Detected object nothing")
+                    Log.d(YOLO123, "No objects detected on attempt ${5 - fivePhotos}")
                 }
 
                 override fun onDetect(boundingBoxes: List<BoundingBox>, inferenceTime: Long) {
+                    if (boundingBoxes.isEmpty()) {
+                        Log.d(YOLO123, "Detected object with highest confidence on attempt ${5 - fivePhotos}: No objects detected")
+                    } else {
+                        // Find the object with the highest confidence in the current image
+                        val maxConfidenceBox = boundingBoxes.maxByOrNull { it.cnf }
+                        Log.d(YOLO123, "Detected object with highest confidence on attempt ${5 - fivePhotos}: ${maxConfidenceBox?.clsName} with confidence: ${maxConfidenceBox?.cnf}")
 
-                    // Log the detection results
-                    for (box in boundingBoxes) {
-                        Log.d(YOLO123, "Detected object: ${box.clsName} with confidence: ${box.cnf}")
-                        // Add points based on detected class
-                        val points = getPointsForClass(box.clsName)
-                        updateUserPoints(points, box.clsName)
+                        maxConfidenceBox?.let { box ->
+                            // Check if the detected object already exists in the list
+                            val detectedObject = detectedObjectsList.find { it.className == box.clsName }
+
+                            if (detectedObject != null) {
+                                // Increment the count if it exists
+                                detectedObject.count++
+                            } else {
+                                // Add new object to the list with a count of 1
+                                detectedObjectsList.add(DetectedObject(className = box.clsName, count = 1))
+                            }
+
+                            // Log the current list of detected objects with counts
+                            Log.d(YOLO123, "Current detected objects list: $detectedObjectsList")
+                        }
                     }
                 }
             })
+
             objectDetector.runDetection(rotatedBitmap)
+
+            if (fivePhotos == 0) {
+                if (detectedObjectsList.isEmpty()) {
+                    Log.d(YOLO123, "No objects were detected in any of the attempts.")
+                } else {
+                    // Determine the most frequently detected object manually
+                    var mostFrequentObject: DetectedObject? = null
+
+                    for (obj in detectedObjectsList) {
+                        if (mostFrequentObject == null || obj.count > mostFrequentObject.count) {
+                            mostFrequentObject = obj
+                        }
+                    }
+
+                    if (mostFrequentObject != null) {
+                        Log.d(YOLO123, "Most frequently detected object: ${mostFrequentObject.className} with count: ${mostFrequentObject.count}")
+
+                        // Update user points for the detected object
+                        val points = getPointsForClass(mostFrequentObject.className)
+                        updateUserPoints(points, mostFrequentObject.className)
+                    }
+                }
+
+                // Clear the detected objects list for the next round
+                detectedObjectsList.clear()
+            }
         }
+
+
+
+
 
         // Convert the input Bitmap object to an MPImage object to run inference
         val mpImage = BitmapImageBuilder(rotatedBitmap).build()
