@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-62:/layout_activity_session_summary.xml.flat",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_session_summary.xml"
-    },
-    {
         "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\drawable_logo.png.flat",
         "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\drawable\\logo.png"
     },
@@ -178,5 +174,9 @@
     {
         "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\drawable_edittext_background.xml.flat",
         "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\drawable\\edittext_background.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-62:/layout_activity_profile.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_profile.xml"
     }
 ]
