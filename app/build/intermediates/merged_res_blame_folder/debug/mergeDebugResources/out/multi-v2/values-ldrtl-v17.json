@@ -4,7 +4,7 @@
             "outputFile": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-60:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Hp\\.gradle\\caches\\transforms-4\\68a723453202f822a6447cbd42735df2\\transformed\\material-1.13.0-alpha04\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "/Users/suhelkhoury/.gradle/caches/transforms-4/68a723453202f822a6447cbd42735df2/transformed/material-1.13.0-alpha04/res/values-ldrtl-v17/values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

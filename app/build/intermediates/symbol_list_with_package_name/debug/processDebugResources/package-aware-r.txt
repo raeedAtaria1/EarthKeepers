@@ -3442,7 +3442,9 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
-id detectedItemsTextView
+id detectedItemsContainer
+id detectedItemsHeaderTextView
+id detectedItemsList
 id detection_threshold_minus
 id detection_threshold_plus
 id detection_threshold_value
@@ -3694,6 +3696,7 @@ id previewView
 id progress
 id progress_circular
 id progress_horizontal
+id promptTextView
 id radio
 id radioButtonFemale
 id radioButtonLeft
@@ -3836,6 +3839,7 @@ id toggle
 id toolbar
 id top
 id topPanel
+id totalPointsTextView
 id touch_outside
 id tracking_threshold_minus
 id tracking_threshold_plus

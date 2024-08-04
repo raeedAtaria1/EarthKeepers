@@ -62,7 +62,6 @@ class GestureRecognizerHelper(
     // Points assignment function
     private fun getPointsForClass(clsName: String): Int {
         return when (clsName) {
-            "Battery" -> 10
             "Can" -> 5
             "Glass Bottle" -> 8
             "Paper Cup" -> 3
@@ -236,8 +235,8 @@ class GestureRecognizerHelper(
 
         // Ensure the object was grabbed and enough time has passed since the last capture
         if (CameraFragment.objectWasgrabbed && (SystemClock.uptimeMillis() - lastCaptureTime > captureDelay)) {
-            saveBitmap(rotatedBitmap, context, "recognized_frame_.jpg")
             CameraFragment.objectWasgrabbed = false
+            saveBitmap(rotatedBitmap, context, "recognized_frame_.jpg")
             lastCaptureTime = SystemClock.uptimeMillis() // Update the last capture time
 
             objectDetector = ObjectDetector(context, MODEL_PATH, LABELS_PATH, object : ObjectDetector.DetectorListener {
