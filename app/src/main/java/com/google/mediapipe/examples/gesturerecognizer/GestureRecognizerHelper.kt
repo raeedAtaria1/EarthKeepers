@@ -243,7 +243,7 @@ class GestureRecognizerHelper(
 
         if (CameraFragment.objectWasgrabbed || fivePhotos > 0) {
             if (CameraFragment.objectWasgrabbed) {
-                fivePhotos = 4
+                fivePhotos = 3
             }
 
             CameraFragment.objectWasgrabbed = false
@@ -268,11 +268,11 @@ class GestureRecognizerHelper(
 
                 override fun onDetect(boundingBoxes: List<BoundingBox>, inferenceTime: Long) {
                     if (boundingBoxes.isEmpty()) {
-                        Log.d(YOLO123, "Detected object with highest confidence on attempt ${5 - fivePhotos}: No objects detected")
+                        Log.d(YOLO123, "Detected object with highest confidence on attempt ${3 - fivePhotos}: No objects detected")
                     } else {
                         // Find the object with the highest confidence in the current image
                         val maxConfidenceBox = boundingBoxes.maxByOrNull { it.cnf }
-                        Log.d(YOLO123, "Detected object with highest confidence on attempt ${5 - fivePhotos}: ${maxConfidenceBox?.clsName} with confidence: ${maxConfidenceBox?.cnf}")
+                        Log.d(YOLO123, "Detected object with highest confidence on attempt ${3 - fivePhotos}: ${maxConfidenceBox?.clsName} with confidence: ${maxConfidenceBox?.cnf}")
 
                         maxConfidenceBox?.let { box ->
                             // Check if the detected object already exists in the list
