@@ -257,7 +257,6 @@ class GestureRecognizerHelper(
 
             val filename = "recognized_frame_${5 - fivePhotos}.jpg"
             val file = File(saveDirectory, filename)
-
             saveBitmap(rotatedBitmap, context, filename)
 
             lastCaptureTime = SystemClock.uptimeMillis()
