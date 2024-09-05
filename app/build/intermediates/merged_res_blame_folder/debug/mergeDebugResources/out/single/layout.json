@@ -1,58 +1,70 @@
 [
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/activity_score.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_score.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\activity_profile.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\activity_profile.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/fragment_gallery.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/fragment_gallery.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\dialog_custom_layout.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\dialog_custom_layout.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/capture_photo.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/capture_photo.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\capture_photo.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\capture_photo.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/activity_signup.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_signup.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/activity_profile.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_profile.xml"
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/activity_user_help.xml",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_user_help.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/info_bottom_sheet.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/info_bottom_sheet.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\item_gesture_recognizer_result.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\item_gesture_recognizer_result.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/fragment_camera.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/fragment_camera.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\fragment_gallery.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\fragment_gallery.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/activity_home.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_home.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/activity_pre_session.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_pre_session.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\activity_user_help.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\activity_user_help.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/activity_main.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\activity_home.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\activity_home.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/list_item_score.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/list_item_score.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\activity_signup.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\activity_signup.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/activity_session_summary.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_session_summary.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\info_bottom_sheet.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\info_bottom_sheet.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/item_gesture_recognizer_result.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/item_gesture_recognizer_result.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\activity_session_summary.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\activity_session_summary.xml"
     },
     {
-        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:/layout/activity_login.xml",
-        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_login.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\fragment_camera.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\fragment_camera.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\activity_pre_session.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\activity_pre_session.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\list_item_score.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\list_item_score.xml"
+    },
+    {
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-mergeDebugResources-61:\\layout\\activity_score.xml",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\layout\\activity_score.xml"
     }
 ]

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,9 @@ public final class ActivityHomeBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final LinearLayout helpButton;
+
+  @NonNull
   public final ImageView imageView;
 
   @NonNull
@@ -31,18 +35,23 @@ public final class ActivityHomeBinding implements ViewBinding {
   public final ImageView imageView3;
 
   @NonNull
+  public final ImageView imageView5;
+
+  @NonNull
   public final Button startButton;
 
   @NonNull
   public final TextView textView;
 
-  private ActivityHomeBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView imageView,
-      @NonNull ImageView imageView2, @NonNull ImageView imageView3, @NonNull Button startButton,
-      @NonNull TextView textView) {
+  private ActivityHomeBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout helpButton,
+      @NonNull ImageView imageView, @NonNull ImageView imageView2, @NonNull ImageView imageView3,
+      @NonNull ImageView imageView5, @NonNull Button startButton, @NonNull TextView textView) {
     this.rootView = rootView;
+    this.helpButton = helpButton;
     this.imageView = imageView;
     this.imageView2 = imageView2;
     this.imageView3 = imageView3;
+    this.imageView5 = imageView5;
     this.startButton = startButton;
     this.textView = textView;
   }
@@ -74,6 +83,12 @@ public final class ActivityHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.helpButton;
+      LinearLayout helpButton = ViewBindings.findChildViewById(rootView, id);
+      if (helpButton == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
@@ -92,6 +107,12 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageView5;
+      ImageView imageView5 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView5 == null) {
+        break missingId;
+      }
+
       id = R.id.startButton;
       Button startButton = ViewBindings.findChildViewById(rootView, id);
       if (startButton == null) {
@@ -104,8 +125,8 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityHomeBinding((ConstraintLayout) rootView, imageView, imageView2, imageView3,
-          startButton, textView);
+      return new ActivityHomeBinding((ConstraintLayout) rootView, helpButton, imageView, imageView2,
+          imageView3, imageView5, startButton, textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

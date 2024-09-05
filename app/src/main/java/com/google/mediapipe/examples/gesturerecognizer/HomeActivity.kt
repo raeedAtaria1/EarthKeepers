@@ -37,5 +37,12 @@ class HomeActivity: AppCompatActivity() {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
+
+        val imageViewHelpButton = findViewById<ImageView>(R.id.imageView5)
+        imageViewHelpButton.setOnClickListener {
+            val intent = Intent(this, UserHelpActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
