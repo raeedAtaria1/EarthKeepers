@@ -1431,6 +1431,7 @@ color abc_tint_edittext
 color abc_tint_seek_thumb
 color abc_tint_spinner
 color abc_tint_switch_track
+color accentColor
 color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
@@ -1462,6 +1463,7 @@ color button_material_dark
 color button_material_light
 color call_notification_answer_color
 color call_notification_decline_color
+color cardBackgroundColor
 color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
@@ -3597,6 +3599,7 @@ id listViewScores
 id list_item
 id locale
 id logo
+id logoImageView
 id ltr
 id m3_side_sheet
 id marquee

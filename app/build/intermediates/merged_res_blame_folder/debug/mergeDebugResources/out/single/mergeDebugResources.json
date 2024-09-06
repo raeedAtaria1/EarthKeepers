@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-debug-62:/layout_activity_session_summary.xml.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-64:/layout/activity_session_summary.xml"
+    },
+    {
         "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\drawable_logo.png.flat",
         "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\drawable\\logo.png"
     },
@@ -36,16 +40,16 @@
         "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\drawable\\background_signup.png"
     },
     {
-        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\drawable_media_pipe_banner.xml.flat",
-        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\drawable\\media_pipe_banner.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\drawable_dialog_background.xml.flat",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\drawable\\dialog_background.xml"
     },
     {
         "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\raw_background_music.mp3.flat",
         "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\raw\\background_music.mp3"
     },
     {
-        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\drawable_dialog_background.xml.flat",
-        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\drawable\\dialog_background.xml"
+        "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\drawable_media_pipe_banner.xml.flat",
+        "source": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-main-64:\\drawable\\media_pipe_banner.xml"
     },
     {
         "merged": "C:\\Users\\Hp\\.gradle\\daemon\\8.6\\com.google.mediapipe.examples.gesturerecognizer.app-debug-62:\\layout_capture_photo.xml.flat",

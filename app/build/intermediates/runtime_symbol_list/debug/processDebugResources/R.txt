@@ -1430,6 +1430,7 @@ int color abc_tint_edittext 0x7f060015
 int color abc_tint_seek_thumb 0x7f060016
 int color abc_tint_spinner 0x7f060017
 int color abc_tint_switch_track 0x7f060018
+int color accentColor 0x7f060334
 int color accent_material_dark 0x7f060019
 int color accent_material_light 0x7f06001a
 int color androidx_core_ripple_material_light 0x7f06001b
@@ -1461,6 +1462,7 @@ int color button_material_dark 0x7f060034
 int color button_material_light 0x7f060035
 int color call_notification_answer_color 0x7f060036
 int color call_notification_decline_color 0x7f060037
+int color cardBackgroundColor 0x7f060335
 int color cardview_dark_background 0x7f060038
 int color cardview_light_background 0x7f060039
 int color cardview_shadow_end_color 0x7f06003a
@@ -3596,6 +3598,7 @@ int id listViewScores 0x7f090127
 int id list_item 0x7f090128
 int id locale 0x7f090129
 int id logo 0x7f09012a
+int id logoImageView 0x7f09026e
 int id ltr 0x7f09012b
 int id m3_side_sheet 0x7f09012c
 int id marquee 0x7f09012d

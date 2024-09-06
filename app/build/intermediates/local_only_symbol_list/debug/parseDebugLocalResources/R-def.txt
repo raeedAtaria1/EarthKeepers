@@ -1,6 +1,7 @@
 R_DEF: Internal format may change without notice
 local
 array delegate_spinner_titles
+color accentColor
 color backgroundColor
 color background_color
 color bg_nav_item
@@ -10,6 +11,7 @@ color bottom_sheet_text_color
 color bounding_box_color
 color buttonColor
 color button_background
+color cardBackgroundColor
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
@@ -112,6 +114,7 @@ id inference_time_val
 id linearLayoutContent
 id listViewScores
 id logo
+id logoImageView
 id maxPointsTextView
 id nav_graph
 id overlay

@@ -43,7 +43,9 @@
     <color name="backgroundColor">#F5F5F5</color>
     <color name="teal_700">#00796B</color>
     <color name="darker_gray">#A9A9A9</color>
-    <color name="buttonColor">#4CAF50</color>
+    <color name="cardBackgroundColor">#FFFFFF</color> <!-- Example color -->
+    <color name="accentColor">#FF4081</color> <!-- Example accent color -->
+    <color name="buttonColor">#6200EE</color> <!-- Button color -->
 
 
 </resources>
