@@ -66,15 +66,15 @@ class GestureRecognizerHelper(
 
     private fun getPointsForClass(clsName: String): Int {
         return when (clsName) {
-            "Can" -> 5
-            "Glass Bottle" -> 8
-            "Paper Cup" -> 3
-            "Peel" -> 2
-            "Plastic Bag" -> 4
-            "Plastic Bottle" -> 6
-            "Plastic Cup" -> 3
-            "Snack" -> 1
-            "Tissue" -> 1
+            "Can" -> 10
+            "Glass Bottle" -> 12
+            "Paper Cup" -> 5
+            "Peel" -> 3
+            "Plastic Bag" -> 15
+            "Plastic Bottle" -> 10
+            "Plastic Cup" -> 8
+            "Snack" -> 7
+            "Tissue" -> 2
             else -> 0
         }
     }
